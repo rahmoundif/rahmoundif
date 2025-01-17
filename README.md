@@ -1,4 +1,4 @@
-<img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
+<img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID"/>
 
 ## Hi there 👋
 
