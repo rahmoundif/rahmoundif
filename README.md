@@ -1,18 +1,21 @@
-<div align="center">
+
 <img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
-<img src="https://readme-typing-svg.herokuapp.com?font=Rubik&duration=4000&pause=1000&center=true&vCenter=true&repeat=false&width=500&lines=Welcome+here" alt="Typing SVG" />
-</div>
+<div align="center">
+<img src="https://readme-typing-svg.herokuapp.com?font=Rubik&duration=4000&pause=1000&center=true&vCenter=true&repeat=false&lines=Welcome+on+my+Github+Page." alt="Typing SVG" />
+
+
 
 <br>
 
 <h2>About Me:</h2>
-Aspiring web developer<br><br>🔭 I’m currently working on Music player<br>👯 I’m looking to collaborate on<br>🤝 I’m looking for help with<br>🌱 I’m currently learning<br>💬 Ask me about<br>⚡ Fun fact
-
-<br>
-
-<h2>Socials:</h2>
-<a href="https://bsky.app/profile/rmoond.bsky.social"><img  align="center" src="https://img.shields.io/badge/bluesky-0285FF?style=for-the-badge&logo=bluesky&logoColor=%23FFFFFF"> </a>
-  
+<h4>Aspiring web developer</h4>
+  <br>
+  <br>
+  <p>
+  🔭 I’m currently working on a Music player<br>
+  🌱 I’m currently learning Javascript<br>
+  </p>
+ 
 <br>
 
 <h2>Tech Stack:</h2>
@@ -41,4 +44,9 @@ Aspiring web developer<br><br>🔭 I’m currently working on Music player<br>�
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" height="30" alt="wordpress logo"  />
 </div>
+
+<br>
+
+<h2>Socials:</h2>
+<a href="https://bsky.app/profile/rmoond.bsky.social"><img  align="center" src="https://img.shields.io/badge/bluesky-0285FF?style=for-the-badge&logo=bluesky&logoColor=%23FFFFFF"> </a>
 
