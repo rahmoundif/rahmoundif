@@ -1,7 +1,7 @@
 
 <img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
 <div align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Rubik&duration=4000&pause=1000&center=true&vCenter=true&repeat=false&lines=Welcome+on+my+Github+Page." alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Rubik&duration=4000&pause=1000&center=true&vCenter=true&repeat=false&lines=Welcome+on+my;Github+Page." alt="Typing SVG" />
 
 
 
@@ -16,6 +16,12 @@
   🌱 I’m currently learning Javascript<br>
   </p>
  
+<br>
+<h2>Week Stats</h2>
+<img
+  src="https://github-readme-stats.vercel.app/api/wakatime?username=RMOoNFID"
+/>
+
 <br>
 
 <h2>Tech Stack:</h2>
