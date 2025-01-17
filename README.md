@@ -1,6 +1,7 @@
-<img align="center" src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
-
-<img align="center" src="https://readme-typing-svg.herokuapp.com?font=Rubik&duration=4000&pause=1000&center=true&vCenter=true&repeat=false&width=500&lines=Welcome+here" alt="Typing SVG" />
+<div align="center">
+<img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
+<img src="https://readme-typing-svg.herokuapp.com?font=Rubik&duration=4000&pause=1000&center=true&vCenter=true&repeat=false&width=500&lines=Welcome+here" alt="Typing SVG" />
+</div>
 
 <br clear="both">
 
