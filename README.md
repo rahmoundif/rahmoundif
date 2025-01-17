@@ -1,4 +1,4 @@
-<img src="https://visitor-badge.glitch.me/badge?page_id=RMOoNFIDD" alt="visitor badge"/>
+<img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
 
 ## Hi there 👋
 
