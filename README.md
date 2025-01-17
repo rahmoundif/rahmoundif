@@ -18,9 +18,9 @@
  
 <br>
 <h2>Week Stats</h2>
-<img
-  src="https://github-readme-stats.vercel.app/api/wakatime?username=RMOoNFID"
-/>
+<img src="https://github-readme-stats.vercel.app/api?username=RMOoNFID&show_icons=true&theme=transparent"/>
+
+
 
 <br>
 
