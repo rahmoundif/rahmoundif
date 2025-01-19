@@ -1,7 +1,7 @@
 
 <img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
 <div align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Rubik&duration=4000&pause=1000&center=true&vCenter=true&repeat=false&lines=Welcome+on+my;Github+page+profile" alt="" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Jersey+15&weight=700&size=40&duration=4000&center=true&multiline=true&width=1000&height=150&lines=Welcome+to+;my+Github+Page" alt="" /></a>
 
 
 
