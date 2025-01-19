@@ -1,8 +1,8 @@
 
 <img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
 <div align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Rubik&duration=4000&pause=1000&center=true&vCenter=true&repeat=false&lines=Welcome+on+my;Github+Page." alt="Typing SVG" />
-
+<img src="https://readme-typing-svg.herokuapp.com?font=Rubik&duration=4000&pause=1000&center=true&vCenter=true&repeat=false&lines=Welcome+on+my" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Rubik&duration=4000&pause=1000&center=true&vCenter=true&repeat=false&lines=Github+Page." alt="Typing SVG" />
 
 
 <br>
