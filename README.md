@@ -8,19 +8,18 @@
 <br>
 
 <h1>About Me:</h1>
-<h2>Aspiring web developer</h2>
-  <br>
+<h2><span style="color:blue">A</span>spiring web developer</h2>
   <br>
   <p>
-    
+  🌱 I’m currently learning Javascript  
   :headphones: I’m currently working on a Music player<br>
-  🌱 I’m currently learning Javascript<br>
+  <br>
   </p>
  
 <br>
 <h2>Week Stats</h2>
+<div align="center">
 <img src="https://github-readme-stats.vercel.app/api?username=RMOoNFID&show_icons=true&theme=transparent"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RMOoNFID"/>
 
 
 
