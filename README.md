@@ -12,7 +12,7 @@
   <br>
   <p>
   🌱 Currently learning Javascript<br>  
-  :memo: ATM Learning Recursion on FreeCodeCamp<br>
+  :memo: ATM practicing Recursion on FreeCodeCamp<br>
   :computer: Starting the Training within the WildCodeSchool remote boootCamp<br>
   <br>
   </p>
