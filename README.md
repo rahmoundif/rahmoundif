@@ -8,7 +8,7 @@
 <br>
 
 <h1>About Me:</h1>
-<h2><span style="color:blue">Joiner</span>oiner learning Web development </h2>
+<h2>Joiner learning Web development </h2>
   <br>
   <p>
   🌱 Currently learning Javascript<br>  
