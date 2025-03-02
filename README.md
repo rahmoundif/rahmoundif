@@ -1,7 +1,7 @@
 
 <img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
 <div align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Jersey+15&weight=700&size=40&duration=4000&center=true&multiline=true&width=1000&height=150&lines=Welcome+to+;my+Github+Page" alt="" /></a>
+<img src="https://readme-typing-svg.herokuapp.com?font=Jersey+15&weight=700&size=40&duration=3000&center=true&multiline=true&width=1000&height=150&lines=Welcome+to+;my+Github+Page" alt="" /></a>
 
 
 
@@ -11,7 +11,7 @@
 <h2><span style="color:blue">A</span>spiring web developer</h2>
   <br>
   <p>
-  🌱 I’m currently learning Javascript  
+  🌱 I’m currently learning Javascript<br>  
   :headphones: I’m currently working on a Music player<br>
   <br>
   </p>
