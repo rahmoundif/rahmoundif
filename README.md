@@ -7,12 +7,13 @@
 
 <br>
 
-<h2>About Me:</h2>
-<h4>Aspiring web developer</h4>
+<h1>About Me:</h1>
+<h2>Aspiring web developer</h2>
   <br>
   <br>
   <p>
-  🔭 I’m currently working on a Music player<br>
+    
+  :headphones: I’m currently working on a Music player<br>
   🌱 I’m currently learning Javascript<br>
   </p>
  
