@@ -8,11 +8,12 @@
 <br>
 
 <h1>About Me:</h1>
-<h2><span style="color:blue">A</span>spiring web developer</h2>
+<h2><span style="color:blue">Joiner</span>oiner learning Web development </h2>
   <br>
   <p>
-  🌱 I’m currently learning Javascript<br>  
-  :headphones: I’m currently working on a Music player<br>
+  🌱 Currently learning Javascript<br>  
+  :memo: ATM Learning Recursion on FreeCodeCamp<br>
+  :computer: Starting the Training within the WildCodeSchool<br>
   <br>
   </p>
  
