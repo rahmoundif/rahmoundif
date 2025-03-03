@@ -25,7 +25,7 @@
 <br>
 <h2>Year Stats</h2>
 <div align="center">
-<img src="https://wakatime.com/share/@5e0289f6-878c-4d54-a33b-11bf9627a3fa/bebc1488-090d-41f9-b094-36041c104b67.svg" width="400px" height="200px" />
+<img src="https://wakatime.com/share/@5e0289f6-878c-4d54-a33b-11bf9627a3fa/bebc1488-090d-41f9-b094-36041c104b67.svg" width="1000px" height="500px" />
 
 
 
