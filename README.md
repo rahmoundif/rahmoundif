@@ -22,6 +22,11 @@
 <div align="center">
 <img src="https://github-readme-stats.vercel.app/api?username=RMOoNFID&show_icons=true&theme=transparent"/>
 
+<br>
+<h2>Year Stats</h2>
+<div align="center">
+<img src="https://wakatime.com/share/@5e0289f6-878c-4d54-a33b-11bf9627a3fa/bebc1488-090d-41f9-b094-36041c104b67.svg"/>
+
 
 
 <br>
