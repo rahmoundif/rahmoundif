@@ -20,7 +20,7 @@
 <br>
 <h2>Week Stats</h2>
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=RMOoNFID&show_icons=true&theme=transparent"/>
+<img src="https://github-readme-stats.vercel.app/api?username=rahmoundif&show_icons=true&theme=transparent"/>
 
 <br>
 <h2>Year Stats</h2>
