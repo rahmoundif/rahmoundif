@@ -1,9 +1,5 @@
 
 <img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
-<div align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Jersey+15&weight=700&size=40&duration=3000&center=true&multiline=true&width=1000&height=150&lines=Welcome+to+;my+Github+Page" alt="" /></a>
-
-
 
 <br>
 
@@ -11,9 +7,9 @@
 <h2>Joiner learning Web development </h2>
   <br>
   <p>
-  🌱 Currently learning Javascript<br>  
-  :memo: ATM practicing Recursion on FreeCodeCamp<br>
-  :computer: Starting the Training within the WildCodeSchool remote boootCamp<br>
+  🌱 Currently learning REACT<br>  
+  :memo: ATM practicing the Javascript courses on FreeCodeCamp<br>
+  :computer: Completing the WildCodeSchool Bootcamp<br>
   <br>
   </p>
  
