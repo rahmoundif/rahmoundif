@@ -14,7 +14,7 @@
   🎯 Mission: Build clean, efficient, and user-focused web solutions
 </p>
 <br>
----
+
 
 <h2 align="center">📈 Weekly Stats</h2>
 <p align="center">
@@ -26,7 +26,7 @@
   <img src="https://wakatime.com/share/@5e0289f6-878c-4d54-a33b-11bf9627a3fa/bebc1488-090d-41f9-b094-36041c104b67.svg" width="800" height="400" alt="Wakatime stats"/>
 </p>
 <br>
----
+
 
 <h2 align="center">🧰 Tech Stack</h2>
 <p align="center">
@@ -47,7 +47,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" height="30" alt="wordpress"/>
 </p>
 <br>
----
+
 
 <h2 align="center">🌐 Socials</h2>
 <p align="center">
