@@ -1,17 +1,22 @@
 
 <img src="https://visitor-badge.laobi.icu/badge?page_id=RMOoNFID.RMOoNFID"/>
 
-<br>
 
-<h1>About Me:</h1>
-<h2>Joiner learning Web development </h2>
-  <br>
-  <p>
-  🌱 Currently learning REACT<br>  
-  :memo: ATM practicing the Javascript courses on FreeCodeCamp<br>
-  :computer: Completing the WildCodeSchool Bootcamp<br>
-  <br>
-  </p>
+<h1 align="center">👨‍💻 Rahmoun DIF</h1>
+<h2 align="center">From Craftsmanship to Code</h3>
+
+<p align="center">
+🔁 Former carpenter now crafting digital experiences  
+🚀 Full-stack Web Developer in training at <strong>Wild Code School</strong>  
+🛠️ Tools: HTML • CSS • Tailwind • JavaScript • React • Git • Node.JS  
+🎯 Mission: Build clean, efficient, and user-focused web solutions  
+</p>
+
+<hr/>
+
+<p align="center">
+📫 Reach out on <a href="www.linkedin.com/in/rahmoun-dif-22891b356" target="_blank">LinkedIn</a>  
+</p>
  
 <br>
 <h2>Week Stats</h2>
@@ -41,7 +46,13 @@
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="30" alt="typescript logo"  />
   <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" />
+  <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" height="30" alt="photoshop logo"  />
   <img width="12" />
