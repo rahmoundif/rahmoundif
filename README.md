@@ -70,5 +70,5 @@
 
 <h2>Socials:</h2>
 <a href="https://bsky.app/profile/rmoond.bsky.social"><img  align="center" src="https://img.shields.io/badge/bluesky-0285FF?style=for-the-badge&logo=bluesky&logoColor=%23FFFFFF"> </a>
-<a href="www.linkedin.com/in/rahmoun-dif-22891b356" target="_blank"> <img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original-wordmark.svg" /></a> 
+<a href="www.linkedin.com/in/rahmoun-dif-22891b356" target="_blank"> <img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original-wordmark.svg" height="30" alt="linkedin" /></a> 
 
