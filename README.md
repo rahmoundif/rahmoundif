@@ -10,7 +10,6 @@
 <p align="center">
   🔁 Former carpenter now crafting digital experiences<br>
   🚀 Full-Stack Web Developer | <a href="https://www.wildcodeschool.com" target="_blank"><strong>Wild Code School</strong></a><br>
-  🛠️ Tools: HTML • CSS • Tailwind • JavaScript • React • Git • Node.JS<br>
   🎯 Mission: Build clean, efficient, and user-focused web solutions
 </p>
 <br>
