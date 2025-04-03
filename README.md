@@ -4,6 +4,7 @@
 
 <h1 align="center">👨‍💻 Rahmoun DIF</h1>
 <h3 align="center">From Craftsmanship to Code</h3>
+<br>
 
 <p align="center">
   🔁 Former carpenter now crafting digital experiences<br>
@@ -11,19 +12,19 @@
   🛠️ Tools: HTML • CSS • Tailwind • JavaScript • React • Git • Node.JS<br>
   🎯 Mission: Build clean, efficient, and user-focused web solutions
 </p>
-
+<br>
 ---
 
 <h2 align="center">📈 Weekly Stats</h2>
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=rahmoundif&show_icons=true&theme=transparent" alt="GitHub stats"/>
 </p>
-
+<br>
 <h2 align="center">📊 Yearly Stats</h2>
 <p align="center">
   <img src="https://wakatime.com/share/@5e0289f6-878c-4d54-a33b-11bf9627a3fa/bebc1488-090d-41f9-b094-36041c104b67.svg" width="800" height="400" alt="Wakatime stats"/>
 </p>
-
+<br>
 ---
 
 <h2 align="center">🧰 Tech Stack</h2>
@@ -34,7 +35,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="30" alt="typescript"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" height="30" alt="tailwindcss"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" height="30" alt="tailwindcss"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="30" alt="npm"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" height="30" alt="nodejs"/>
@@ -44,7 +45,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="30" alt="git"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" height="30" alt="wordpress"/>
 </p>
-
+<br>
 ---
 
 <h2 align="center">🌐 Socials</h2>
