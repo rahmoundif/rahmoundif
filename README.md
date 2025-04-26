@@ -1,5 +1,5 @@
 
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=rahmoundif.rahmoundif" alt="visitor badge"/>
+ ![visitors](https://visitor-badge.glitch.me/badge?rahmoundif=rahmoundif&left_color=green&right_color=red)
 
 
 <h1 align="center">👨‍💻 Rahmoun DIF</h1>
