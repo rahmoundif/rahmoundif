@@ -1,5 +1,5 @@
 
- ![visitors](https://visitor-badge.glitch.me/badge?page_id=rahmoundif&left_color=green&right_color=red)
+[![Rahmoun DIF profile views](https://u8views.com/api/v1/github/profiles/183239184/views/day-week-month-total-count.svg)](https://u8views.com/github/rahmoundif)
 
 
 <h1 align="center">👨‍💻 Rahmoun DIF</h1>
