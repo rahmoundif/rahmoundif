@@ -1,6 +1,6 @@
-<a align="center">
+
 [![Rahmoun DIF profile views](https://u8views.com/api/v1/github/profiles/183239184/views/day-week-month-total-count.svg)](https://u8views.com/github/rahmoundif)
-</a>
+
 
 
 <h1 align="center">👨‍💻 Rahmoun DIF</h1>
