@@ -58,7 +58,7 @@
 <h2 align="center">📊 Yearly Stats</h2>
 <p align="center">
  <p align="center">
-  <a href="https://wakatime.com/@rahmoundif" target="_blank">
-    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=rahmoundif&layout=default&theme=transparent&range=last_year" alt="WakaTime Stats" />
+  <a href="https://wakatime.com/@rahmoundif" target="_blank" rel="noopener noreferrer"">
+    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=rahmoundif&&range=last_30_days&layout=default&theme=tokyonight&langs_count=5&projects_count=5" alt="WakaTime Stats" />
   </a>
 </p>
