@@ -18,7 +18,7 @@ jobs:
             dist/github-contribution-grid-snake.svg
           palette: github-light # important pour neutraliser le fond
           color_snake: "#39FF14" # vert fluo exemple
-          color_dots: "#00000000,#00000000,#00000000,#00000000,#00000000" # tous transparents
+          
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.1.3
