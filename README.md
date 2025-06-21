@@ -1,6 +1,7 @@
-
+<p align="center">
 [![Rahmoun DIF profile views](https://u8views.com/api/v1/github/profiles/183239184/views/day-week-month-total-count.svg)](https://u8views.com/github/rahmoundif)
 [![wakatime](https://wakatime.com/badge/user/5e0289f6-878c-4d54-a33b-11bf9627a3fa.svg)](https://wakatime.com/@5e0289f6-878c-4d54-a33b-11bf9627a3fa)
+</p>
 
 
 <h1 align="center">👨‍💻 Rahmoun DIF</h1>
