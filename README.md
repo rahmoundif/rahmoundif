@@ -61,8 +61,6 @@
 </p>
 <br>
 <h2 align="center">📊 Yearly Stats</h2>
-<p align="center">
- <p align="center">
  <p align="center">
   <a href="https://wakatime.com/@Rahmoun" target="_blank" rel="noopener noreferrer">
     <img
