@@ -82,4 +82,5 @@
       alt="WakaTime Year Stats" style="border-radius: 6px;" />
   </a>
 </p>
-![Snake animation](https://github.com/rahmoundif/rahmoundif/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://raw.githubusercontent.com/rahmoundif/rahmoundif/output/github-contribution-grid-snake.svg)
+
