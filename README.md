@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=capsule%20render&fontSize=90" />
+<img src="https://capsule-render.vercel.app/api?text=Welcome !&animation=fadeIn&type=waving&color=gradient&height=100" />
 
 
 <p align="left">
