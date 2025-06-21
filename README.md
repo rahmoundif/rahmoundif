@@ -6,13 +6,6 @@
 </p>
 <img src="https://capsule-render.vercel.app/api?text=Welcome!&animation=fadeIn&type=waving&color=gradient&height=150" />
 </p>
-
-
-<p align="left">
-  <a href="https://u8views.com/github/rahmoundif">
-    <img src="https://u8views.com/api/v1/github/profiles/183239184/views/total-count.svg" alt="Rahmoun DIF profile views" height="25" />
-  </a>
-</p>
  
 
 
