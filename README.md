@@ -83,8 +83,5 @@
   </a>
 </p>
 
-<h2 align="center">🐍 Contribution Snake</h2>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rahmoundif/rahmoundif/output/github-contribution-grid-snake.svg" alt="Snake animation" />
-</p>
+![Snake animation](https://raw.githubusercontent.com/rahmoundif/rahmoundif/output/github-contribution-grid-snake.gif)
 
