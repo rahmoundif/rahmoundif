@@ -1,7 +1,7 @@
 name: Generate Datas
 
 on:
-  schedule: # execute every 12 hours
+  schedule:
     - cron: "0 */12 * * *"
   workflow_dispatch:
 
@@ -10,8 +10,7 @@ jobs:
     name: Jobs to update datas
     runs-on: ubuntu-latest
     steps:
-      # Snake Animation SVG + GIF
-      - name: Generate SVG and GIF
+      - name: Generate SVG and GIF (transparent + no white dots)
         uses: Platane/snk@v3
         with:
           github_user_name: rahmoundif
@@ -22,7 +21,6 @@ jobs:
           color_snake: "#00FFAA"
           color_dots: "#00000000,#00000000,#00000000,#00000000,#00000000"
 
-      # Deploy to GitHub Pages
       - name: Push to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
