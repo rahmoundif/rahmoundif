@@ -1,4 +1,6 @@
+<p align="center">
 <img src="https://capsule-render.vercel.app/api?text=Welcome!&animation=fadeIn&type=waving&color=gradient&height=150" />
+</p>
 
 
 <p align="left">
@@ -80,3 +82,4 @@
       alt="WakaTime Year Stats" style="border-radius: 6px;" />
   </a>
 </p>
+![Snake animation](https://github.com/thepiyushmalhotra/rahmoundif/output/github-contribution-grid-snake.svg)
