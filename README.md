@@ -1,6 +1,6 @@
 
 [![Rahmoun DIF profile views](https://u8views.com/api/v1/github/profiles/183239184/views/day-week-month-total-count.svg)](https://u8views.com/github/rahmoundif)
-
+[![wakatime](https://wakatime.com/badge/user/5e0289f6-878c-4d54-a33b-11bf9627a3fa.svg)](https://wakatime.com/@5e0289f6-878c-4d54-a33b-11bf9627a3fa)
 
 
 <h1 align="center">👨‍💻 Rahmoun DIF</h1>
@@ -58,7 +58,7 @@
 <h2 align="center">📊 Yearly Stats</h2>
 <p align="center">
  <p align="center">
-  <a href="https://wakatime.com/@1878a701-79cc-407f-bd59-fc121e20115a" target="_blank" rel="noopener noreferrer"">
-    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=1878a701-79cc-407f-bd59-fc121e20115a&range=last_30_days&layout=default&theme=tokyonight&langs_count=5&projects_count=5" alt="WakaTime Stats" />
+  <a href="https://wakatime.com/rahmoundif" target="_blank" rel="noopener noreferrer"">
+    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=rahmoundif&range=last_30_days&layout=default&theme=tokyonight&langs_count=5&projects_count=5" alt="WakaTime Stats" />
   </a>
 </p>
