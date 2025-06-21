@@ -57,6 +57,9 @@
 <br>
 <h2 align="center">📊 Yearly Stats</h2>
 <p align="center">
-  <img src="https://wakatime.com/share/@5e0289f6-878c-4d54-a33b-11bf9627a3fa/bebc1488-090d-41f9-b094-36041c104b67.svg" width="800" height="400" alt="Wakatime stats"/>
+  <a href="https://wakatime.com/@1878a701-79cc-407f-bd59-fc121e20115a" target="_blank" rel="noopener noreferrer">
+    <img
+      src="https://github-readme-stats.vercel.app/api/wakatime?username=1878a701-79cc-407f-bd59-fc121e20115a&range=last_30_days&layout=default&theme=tokyonight&langs_count=5&projects_count=5"
+      alt="WakaTime (30 derniers jours)" style="border-radius: 6px;" />
+  </a>
 </p>
-
