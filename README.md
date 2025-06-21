@@ -22,8 +22,8 @@
 
 <h2 align="center">🧰 Tech Stack</h2>
 
-<div align="center">
-  <table style="border-radius: 6px;">
+<div align="center" style="border-radius: 6px;">
+  <table>
     <tr>
       <td align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="40" width="40" alt="Firefox"/><br/>Firefox</td>
       <td align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" width="40" alt="VSCode"/><br/>VS Code</td>
