@@ -10,16 +10,17 @@ jobs:
     name: Jobs to update datas
     runs-on: ubuntu-latest
     steps:
-      - name: Generate SVG and GIF (transparent + no white dots)
-        uses:  Platane/snk/svg-only@v3
+      - name: Generate snake SVG + GIF with transparent dots
+        uses: Platane/snk@v3
         with:
           github_user_name: rahmoundif
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+            dist/github-contribution-grid-snake.svg
+          palette: github-light # important pour neutraliser le fond
+          color_snake: "#39FF14" # vert fluo exemple
+          color_dots: "#00000000,#00000000,#00000000,#00000000,#00000000" # tous transparents
 
-      - name: Push to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
           target_branch: output
