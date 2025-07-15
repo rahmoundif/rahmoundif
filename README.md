@@ -1,6 +1,6 @@
   <p align="left">
   <a href="https://u8views.com/github/rahmoundif">
-    <img src="https://u8views.com/api/v1/github/profiles/183239184/views/total-count.svg" alt="Rahmoun DIF profile views" height="25" />
+    <img src="https://u8views.com/api/v1/github/profiles/183239184/views/total-count.svg" alt="Rahmoun DIF profile views" height="30" />
   </a>
 </p>
 <p align="center">
