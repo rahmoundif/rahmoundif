@@ -64,7 +64,7 @@
  
   <a href="https://wakatime.com/@Rahmoun" target="_blank" rel="noopener noreferrer">
     <img
-      src="https://github-readme-stats.vercel.app/api/wakatime?username=Rahmoun&range=last_year&layout=default&theme=tokyonight&langs_count=10&projects_count=5"
+      src="https://github-readme-stats.vercel.app/api/wakatime?username=Rahmoun&range=last_year&layout=default&theme=tokyonight&langs_count=5&projects_count=5"
       alt="WakaTime Year Stats" style="border-radius: 6px;" />
   </a>
 </p>
