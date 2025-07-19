@@ -30,9 +30,6 @@
 
 <h2 align="center">🧰 Tech Stack</h2>
 
-
-  <div align="center">
-
   
   <p>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="40" alt="Firefox"/>
@@ -53,7 +50,6 @@
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg" height="40" alt="PostGreSQL"/>
   </p>
 
-</div>
 
 <br>
 <h2 align="center">📈 Stats</h2>
@@ -73,4 +69,5 @@
     </td>
   </tr>
 </table>
+
 ![Snake animation](https://github.com/rahmoundif/rahmoundif/blob/output/github-contribution-grid-snake.svg)
