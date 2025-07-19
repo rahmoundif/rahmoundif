@@ -9,7 +9,12 @@
  
 
 
-<h1 align="center">👨‍💻 Rahmoun DIF</h1>
+<h1 align="center">👨‍💻 Rahmoun DIF</h1> <h2 align="center"></h2>
+<p align="center">
+  <a href="https://www.linkedin.com/in/rahmoun-dif-22891b356" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" height="40" width="40" alt="LinkedIn">
+  </a>
+</p>
 <br>
 <h3 align="center">From Craftsmanship to Code</h3>
 <br>
@@ -50,25 +55,13 @@
 
 </div>
 
-<h2 align="center">🌐 Socials</h2>
-<p align="center">
-  <a href="https://bsky.app/profile/rmoond.bsky.social">
-    <img src="https://img.shields.io/badge/bluesky-0285FF?style=for-the-badge&logo=bluesky&logoColor=white" alt="Bluesky">
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/rahmoun-dif-22891b356" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" height="40" width="40" alt="LinkedIn">
-  </a>
-</p>
+<br>
+<h2 align="center">📈Stats</h2>
+<p>
+  <img src="https://github-readme-stats.vercel.app/api?username=rahmoundif&show_icons=true&theme=transparent" alt="GitHub stats"/>
 
 <br>
-<h2 align="center">📈 Weekly Stats</h2>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rahmoundif&show_icons=true&theme=transparent" alt="GitHub stats"/>
-</p>
-<br>
-<h2 align="center">📊 Yearly Stats</h2>
- <p align="center">
+ 
   <a href="https://wakatime.com/@Rahmoun" target="_blank" rel="noopener noreferrer">
     <img
       src="https://github-readme-stats.vercel.app/api/wakatime?username=Rahmoun&range=last_year&layout=default&theme=tokyonight&langs_count=10&projects_count=5"
