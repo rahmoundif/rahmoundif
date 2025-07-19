@@ -30,7 +30,7 @@
 
 <h2 align="center">🧰 Tech Stack</h2>
 
-  
+  <div align="center">
   <table align="center">
   <tr>
     <td align="center">
@@ -93,6 +93,8 @@
     </td>
   </tr>
 </table>
+
+</div>
 <br>
 <h2 align="center">📈 Stats</h2>
 
