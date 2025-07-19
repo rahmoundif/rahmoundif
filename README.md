@@ -54,20 +54,21 @@
 <br>
 <h2 align="center">📈 Stats</h2>
 
-<table align="center">
-  <tr>
-    <td>
-      <img src="https://github-readme-stats.vercel.app/api?username=rahmoundif&show_icons=true&theme=transparent" alt="GitHub stats" />
-    </td>
-    <td>
-      <a href="https://wakatime.com/@Rahmoun" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://github-readme-stats.vercel.app/api/wakatime?username=Rahmoun&range=last_year&layout=default&theme=tokyonight&langs_count=5&projects_count=5"
-          alt="WakaTime Year Stats"
-        />
-      </a>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://github.com/rahmoundif">
+    <img
+      src="https://github-readme-stats.vercel.app/api?username=rahmoundif&show_icons=true&theme=transparent"
+      alt="GitHub stats"
+      width="420"
+    />
+  </a>
+  <a href="https://wakatime.com/@Rahmoun" target="_blank" rel="noopener noreferrer">
+    <img
+      src="https://github-readme-stats.vercel.app/api/wakatime?username=Rahmoun&range=last_year&layout=default&theme=tokyonight&langs_count=5&projects_count=5"
+      alt="WakaTime stats"
+      width="420"
+    />
+  </a>
+</p>
 
 ![Snake animation](https://github.com/rahmoundif/rahmoundif/blob/output/github-contribution-grid-snake.svg)
