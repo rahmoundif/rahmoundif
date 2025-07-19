@@ -88,6 +88,11 @@
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg" height="40" alt="PostGreSQL"/><br/>PostgreSQL
     </td>
   </tr>
+  <tr>
+    <td colspan="4" align="center">
+      <em>✨ More coming soon...</em>
+    </td>
+  </tr>
 </table>
 
 <br>
