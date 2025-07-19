@@ -56,17 +56,24 @@
 </div>
 
 <br>
-<h2 align="center">📈Stats</h2>
-<p>
-  <img src="https://github-readme-stats.vercel.app/api?username=rahmoundif&show_icons=true&theme=transparent" alt="GitHub stats"/>
+<h2 align="center">📈 Stats</h2>
 
-<br>
- 
+<div align="center" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+
+  <img
+    src="https://github-readme-stats.vercel.app/api?username=rahmoundif&show_icons=true&theme=transparent"
+    alt="GitHub stats"
+    height="180"
+  />
+
   <a href="https://wakatime.com/@Rahmoun" target="_blank" rel="noopener noreferrer">
     <img
       src="https://github-readme-stats.vercel.app/api/wakatime?username=Rahmoun&range=last_year&layout=default&theme=tokyonight&langs_count=5&projects_count=5"
-      alt="WakaTime Year Stats" style="border-radius: 6px;" />
+      alt="WakaTime Year Stats"
+      height="180"
+    />
   </a>
-</p>
+
+</div>
 
 ![Snake animation](https://github.com/rahmoundif/rahmoundif/blob/output/github-contribution-grid-snake.svg)
