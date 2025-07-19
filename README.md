@@ -25,7 +25,6 @@
 
 <h2 align="center">🧰 Tech Stack</h2>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="40" alt="Firefox"/><br/><small>Firefox</small></div>
 
