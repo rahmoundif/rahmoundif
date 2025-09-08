@@ -9,7 +9,7 @@
  
 
 
-<h1 align="center">👨‍💻 Rahmoun DIF</h1> <h2 align="center"></h2>
+<h1 align="center">Rahmoun DIF</h1> <h2 align="center"></h2>
 <p align="center">
   <a href="https://www.linkedin.com/in/rahmoun-dif-22891b356" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" height="40" width="40" alt="LinkedIn">
@@ -20,15 +20,14 @@
 <br>
 
 <p align="center">
-  🔁 Former carpenter now crafting digital experiences<br>
-  🚀 Full-Stack Web Developer | <a href="https://www.wildcodeschool.com" target="_blank"><strong>Wild Code School</strong></a><br>
-  🎯 Mission: Build clean, efficient, and user-focused web solutions
+  Former carpenter now crafting digital experiences<br>
+  Full-Stack Web Developer |
 </p>
 <br>
 <br>
 
 
-<h2 align="center">🧰 Tech Stack</h2>
+<h2 align="center">Tech Stack</h2>
 
 <div align="center">
  <table>
@@ -95,7 +94,7 @@
 </table>
 </div>
 <br>
-<h2 align="center">📈 Stats</h2>
+<h2 align="center">Stats</h2>
 
 <p align="center">
   <a href="https://github.com/rahmoundif">
@@ -113,5 +112,3 @@
     />
   </a>
 </p>
-
-![Snake animation](https://github.com/rahmoundif/rahmoundif/blob/output/github-contribution-grid-snake.svg)
