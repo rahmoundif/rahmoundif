@@ -10,6 +10,7 @@
     "xpath": "^0.0.32"
   },
   "devDependencies": {
+    "@types/node": "^24.5.2",
     "typescript": "^5.5.0"
   }
 }
