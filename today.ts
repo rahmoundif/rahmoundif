@@ -4,7 +4,9 @@ import { DOMParser, XMLSerializer } from "@xmldom/xmldom";
 import xpath from "xpath";
 
 const TOKEN = (process.env.ACCESS_TOKEN || process.env.GITHUB_TOKEN || "").trim();
-const USER = (process.env.USER_NAME || process.env.GITHUB_ACTOR || "").trim();
+// Prefer an explicit USER_NAME secret, fall back to the actor, then the repo owner (for scheduled/workflow runs)
+const repoOwnerFallback = (process.env.GITHUB_REPOSITORY || "").split("/")[0] || "";
+const USER = (process.env.USER_NAME || process.env.GITHUB_ACTOR || repoOwnerFallback || "").trim();
 const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-25").trim(); // <-- mets la tienne YYYY-MM-DD
 if (!TOKEN || !USER) {
   console.warn("WARNING: Missing ACCESS_TOKEN/GITHUB_TOKEN or USER_NAME — running in preview mode (ASCII will be injected, stats will be placeholders).");
@@ -84,14 +86,10 @@ async function getOwnerStarsRepos() {
   return { total, stars };
 }
 async function getContributedRepos() {
-  const res = await client<{ user: { repositories: { totalCount: number } } }>(
-    `
-    query($login:String!){
-      user(login:$login){ repositories(first:1, ownerAffiliations:[OWNER, COLLABORATOR, ORGANIZATION_MEMBER]){ totalCount } }
-    }`,
-    { login: USER }
-  );
-  return res.user.repositories.totalCount;
+  // Use repositoriesContributedTo which counts repositories the user has contributed to
+  const q = `query($login:String!){ user(login:$login){ repositoriesContributedTo(first:1){ totalCount } } }`;
+  const res = await client<{ user: { repositoriesContributedTo: { totalCount: number } } }>(q, { login: USER });
+  return res.user.repositoriesContributedTo.totalCount;
 }
 async function getFollowers() {
   const res = await client<{ user: { followers: { totalCount: number } } }>(
@@ -258,6 +256,16 @@ function updateSvg(
   commits = commitsRes as number;
   locLines = (locRes as any).lines as number;
   locBytes = (locRes as any).bytes as number;
+    console.log('fetched stats:', {
+      user: USER,
+      repos: total,
+      stars,
+      contributed,
+      followers,
+      commits,
+      locLines,
+      locBytes,
+    });
   } else {
     // local preview placeholders
     total = 12;
