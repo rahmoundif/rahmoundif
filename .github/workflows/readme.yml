@@ -1,0 +1,33 @@
+name: README build
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: "0 4 * * *"
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Generate SVGs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USER_NAME: ${{ secrets.USER_NAME }}   
+          BIRTHDATE:  ${{ secrets.BIRTHDATE }} 
+        run: |
+          npm run build
+          npm run update
+      - name: Commit & push if changed
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name  "github-actions[bot]"
+          git add -A
+          git diff --quiet || git commit -m "chore: update SVGs [skip ci]"
+          git push
