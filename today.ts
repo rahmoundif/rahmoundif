@@ -117,8 +117,11 @@ function updateSvg(
   // ASCII
   const asciiNode = nodeById(doc, "ascii_payload");
   if (asciiNode) {
+    // Clear existing content
     while ((asciiNode as any).firstChild)
       (asciiNode as any).removeChild((asciiNode as any).firstChild);
+    
+    // For foreignObject with <pre>, we need to add the ASCII as text content
     asciiNode.appendChild(doc.createTextNode(ascii));
   }
 
