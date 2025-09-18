@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "update": "node dist/today.js"
+  },
+  "dependencies": {
+    "@octokit/graphql": "^7.0.1",
+    "@xmldom/xmldom": "^0.8.10",
+    "xpath": "^0.0.32"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}
