@@ -54,27 +54,29 @@ async function getOwnerStarsRepos() {
     stars = 0,
     total = 0,
     first = true;
-  while (true) {
-    const res = await client<{
-      user: {
-        repositories: {
-          totalCount: number;
-          pageInfo: { endCursor: string; hasNextPage: boolean };
-          edges: { node: { stargazers: { totalCount: number } } }[];
-        };
-      };
-    }>(
-      `query($login:String!,$cursor:String){
+  
+  const query = `query($login:String!,$cursor:String){
       user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER]){
-        totalCount pageInfo{endCursor hasNextPage} edges{ node{ stargazers{ totalCount } } } } } }`,
-      { login: USER, cursor }
-    );
+        totalCount pageInfo{endCursor hasNextPage} edges{ node{ stargazers{ totalCount } } } } } }`;
+  
+  type RepositoriesResponse = {
+    user: {
+      repositories: {
+        totalCount: number;
+        pageInfo: { endCursor: string; hasNextPage: boolean };
+        edges: { node: { stargazers: { totalCount: number } } }[];
+      };
+    };
+  };
+  
+  while (true) {
+    const res: RepositoriesResponse = await client(query, { login: USER, cursor });
     const r = res.user.repositories;
     if (first) {
       total = r.totalCount;
       first = false;
     }
-    stars += r.edges.reduce((s, e) => s + e.node.stargazers.totalCount, 0);
+    stars += r.edges.reduce((s: number, e: { node: { stargazers: { totalCount: number } } }) => s + e.node.stargazers.totalCount, 0);
     if (!r.pageInfo.hasNextPage) break;
     cursor = r.pageInfo.endCursor;
   }
