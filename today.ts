@@ -264,6 +264,9 @@ function updateSvg(
     stars = 34;
     contributed = 5;
     followers = 7;
+    commits = 2116;
+    locLines = 446276;
+    locBytes = 523178;
   }
   const age = ageString(BIRTHDATE);
   updateSvg("light_mode.svg", ascii, {
