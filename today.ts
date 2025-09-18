@@ -275,6 +275,7 @@ function updateSvg(
     commits = 2116;
     locLines = 446276;
     locBytes = 523178;
+    console.log('running in preview mode with placeholder stats');
   }
   const age = ageString(BIRTHDATE);
   updateSvg("light_mode.svg", ascii, {
