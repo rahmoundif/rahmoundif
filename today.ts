@@ -3,9 +3,9 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { DOMParser, XMLSerializer } from "@xmldom/xmldom";
 import xpath from "xpath";
 
-const TOKEN = process.env.ACCESS_TOKEN || process.env.GITHUB_TOKEN || "";
-const USER = process.env.USER_NAME || process.env.GITHUB_ACTOR || "";
-const BIRTHDATE = process.env.BIRTHDATE || "2000-01-01"; // <-- mets la tienne YYYY-MM-DD
+const TOKEN = (process.env.ACCESS_TOKEN || process.env.GITHUB_TOKEN || "").trim();
+const USER = (process.env.USER_NAME || process.env.GITHUB_ACTOR || "").trim();
+const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-25").trim(); // <-- mets la tienne YYYY-MM-DD
 if (!TOKEN || !USER)
   throw new Error("Missing ACCESS_TOKEN/GITHUB_TOKEN or USER_NAME");
 
