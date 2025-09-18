@@ -1,13 +1,22 @@
 import { graphql } from "@octokit/graphql";
 import { readFileSync, writeFileSync } from "node:fs";
 import { DOMParser, XMLSerializer } from "@xmldom/xmldom";
-import xpath from "xpath";
+import * as xpath from "xpath";
 
 const TOKEN = (process.env.ACCESS_TOKEN || process.env.GITHUB_TOKEN || "").trim();
 // Prefer an explicit USER_NAME secret, fall back to the actor, then the repo owner (for scheduled/workflow runs)
 const repoOwnerFallback = (process.env.GITHUB_REPOSITORY || "").split("/")[0] || "";
 const USER = (process.env.USER_NAME || process.env.GITHUB_ACTOR || repoOwnerFallback || "").trim();
-const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-25").trim(); // <-- mets la tienne YYYY-MM-DD
+const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-25").trim(); 
+
+// Static personal information
+const STATIC_INFO = {
+  email: "rahmoun.dif@gmail.com",
+  os: "Windows 11",
+  linkedin: "linkedin.com/in/rahmoundif",
+  discord: "rahmoundif",
+  ide: "VS Code"
+};
 if (!TOKEN || !USER) {
   console.warn("WARNING: Missing ACCESS_TOKEN/GITHUB_TOKEN or USER_NAME — running in preview mode (ASCII will be injected, stats will be placeholders).");
 }
@@ -141,6 +150,47 @@ async function getLocEstimate() {
   return { bytes: totalBytes, lines };
 }
 
+async function getTopLanguages() {
+  // Get top 3 programming languages by total bytes across all repositories
+  let cursor: string | null = null;
+  const languageMap = new Map<string, number>();
+  
+  const query = `query($login:String!,$cursor:String){ user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER]){ pageInfo{endCursor hasNextPage} edges{ node{ languages(first:10){ edges{ node{name} size } } } } } } }`;
+
+  type TopLangsResp = {
+    user: {
+      repositories: {
+        pageInfo: { endCursor: string; hasNextPage: boolean };
+        edges: { node: { languages: { edges: { node: { name: string }; size: number }[] } } }[];
+      };
+    };
+  };
+
+  while (true) {
+    const res: TopLangsResp = await client(query, { login: USER, cursor });
+    const repos = res.user.repositories;
+    
+    for (const repo of repos.edges) {
+      for (const lang of repo.node.languages.edges) {
+        const name = lang.node.name;
+        const size = lang.size || 0;
+        languageMap.set(name, (languageMap.get(name) || 0) + size);
+      }
+    }
+    
+    if (!repos.pageInfo.hasNextPage) break;
+    cursor = repos.pageInfo.endCursor;
+  }
+
+  // Sort by size and get top 3
+  const sortedLanguages = Array.from(languageMap.entries())
+    .sort(([,a], [,b]) => b - a)
+    .slice(0, 3)
+    .map(([name]) => name);
+
+  return sortedLanguages;
+}
+
 function updateSvg(
   path: string,
   ascii: string,
@@ -153,6 +203,12 @@ function updateSvg(
     commits?: number;
     locLines?: number;
     locBytes?: number;
+    topLanguages?: string[];
+    email?: string;
+    os?: string;
+    linkedin?: string;
+    discord?: string;
+    ide?: string;
   }
 ) {
   const xml = readFileSync(path, "utf8");
@@ -228,6 +284,20 @@ function updateSvg(
   if (typeof p.locBytes === "number") {
     put(doc, "loc_add", fmt(p.locBytes));
   }
+  
+  // Top Languages
+  if (p.topLanguages && p.topLanguages.length > 0) {
+    put(doc, "lang1_data", p.topLanguages[0] || "N/A");
+    put(doc, "lang2_data", p.topLanguages[1] || "N/A");
+    put(doc, "lang3_data", p.topLanguages[2] || "N/A");
+  }
+  
+  // Static personal info
+  if (p.email) put(doc, "email_data", p.email);
+  if (p.os) put(doc, "os_data", p.os);
+  if (p.linkedin) put(doc, "linkedin_data", p.linkedin);
+  if (p.discord) put(doc, "discord_data", p.discord);
+  if (p.ide) put(doc, "ide_data", p.ide);
 
   writeFileSync(path, new XMLSerializer().serializeToString(doc), "utf8");
   console.log(`updated ${path}`);
@@ -242,13 +312,15 @@ function updateSvg(
   let commits: number | undefined = undefined;
   let locLines: number | undefined = undefined;
   let locBytes: number | undefined = undefined;
+  let topLanguages: string[] = [];
   if (TOKEN && USER) {
-    const [ownerRes, contributedRes, followersRes, commitsRes, locRes] = await Promise.all([
+    const [ownerRes, contributedRes, followersRes, commitsRes, locRes, topLangsRes] = await Promise.all([
       getOwnerStarsRepos(),
       getContributedRepos(),
       getFollowers(),
       getCommitContributions(),
       getLocEstimate(),
+      getTopLanguages(),
     ]);
     ({ total, stars } = ownerRes as any);
     contributed = contributedRes as any;
@@ -256,6 +328,7 @@ function updateSvg(
   commits = commitsRes as number;
   locLines = (locRes as any).lines as number;
   locBytes = (locRes as any).bytes as number;
+    topLanguages = topLangsRes as string[];
     console.log('fetched stats:', {
       user: USER,
       repos: total,
@@ -265,6 +338,7 @@ function updateSvg(
       commits,
       locLines,
       locBytes,
+      topLanguages,
     });
   } else {
     // local preview placeholders
@@ -275,6 +349,7 @@ function updateSvg(
     commits = 2116;
     locLines = 446276;
     locBytes = 523178;
+    topLanguages = ["TypeScript", "JavaScript", "Python"];
     console.log('running in preview mode with placeholder stats');
   }
   const age = ageString(BIRTHDATE);
@@ -287,6 +362,12 @@ function updateSvg(
     commits: typeof commits === "number" ? commits : undefined,
     locLines: typeof locLines === "number" ? locLines : undefined,
     locBytes: typeof locBytes === "number" ? locBytes : undefined,
+    topLanguages,
+    email: STATIC_INFO.email,
+    os: STATIC_INFO.os,
+    linkedin: STATIC_INFO.linkedin,
+    discord: STATIC_INFO.discord,
+    ide: STATIC_INFO.ide,
   });
   updateSvg("dark_mode.svg", ascii, {
     age,
@@ -297,5 +378,11 @@ function updateSvg(
     commits: typeof commits === "number" ? commits : undefined,
     locLines: typeof locLines === "number" ? locLines : undefined,
     locBytes: typeof locBytes === "number" ? locBytes : undefined,
+    topLanguages,
+    email: STATIC_INFO.email,
+    os: STATIC_INFO.os,
+    linkedin: STATIC_INFO.linkedin,
+    discord: STATIC_INFO.discord,
+    ide: STATIC_INFO.ide,
   });
 })();
