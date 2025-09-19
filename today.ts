@@ -13,7 +13,8 @@ const STATIC_INFO = {
   email: "rahmoun.dif@gmail.com",
   os: "Windows 11",
   linkedin: "linkedin.com/in/rahmoundif",
-  discord: "rahmoundif",
+  malt: "malt.fr/profile/rahmoundif",
+  bluesky: "@rmoond.bsky.social",
   ide: "VS Code"
 };
 if (!TOKEN || !USER) {
@@ -181,10 +182,12 @@ async function getTopLanguages() {
     cursor = repos.pageInfo.endCursor;
   }
 
-  // Sort by size and get top 3
+  // Sort by size, filter out HTML/CSS, and get top programming languages
+  const excludedLanguages = new Set(['HTML', 'CSS', 'SCSS', 'Sass', 'Less']);
   const sortedLanguages = Array.from(languageMap.entries())
+    .filter(([name]) => !excludedLanguages.has(name))
     .sort(([,a], [,b]) => b - a)
-    .slice(0, 3)
+    .slice(0, 5)
     .map(([name]) => name);
 
   return sortedLanguages;
@@ -206,7 +209,8 @@ function updateSvg(
     email?: string;
     os?: string;
     linkedin?: string;
-    discord?: string;
+    malt?: string;
+    bluesky?: string;
     ide?: string;
   }
 ) {
@@ -295,7 +299,8 @@ function updateSvg(
   if (p.email) put(doc, "email_data", p.email);
   if (p.os) put(doc, "os_data", p.os);
   if (p.linkedin) put(doc, "linkedin_data", p.linkedin);
-  if (p.discord) put(doc, "discord_data", p.discord);
+  if (p.malt) put(doc, "malt_data", p.malt);
+  if (p.bluesky) put(doc, "bluesky_data", p.bluesky);
   if (p.ide) put(doc, "ide_data", p.ide);
 
   writeFileSync(path, new XMLSerializer().serializeToString(doc), "utf8");
@@ -364,7 +369,8 @@ function updateSvg(
     email: STATIC_INFO.email,
     os: STATIC_INFO.os,
     linkedin: STATIC_INFO.linkedin,
-    discord: STATIC_INFO.discord,
+    malt: STATIC_INFO.malt,
+    bluesky: STATIC_INFO.bluesky,
     ide: STATIC_INFO.ide,
   });
   updateSvg("dark_mode.svg", ascii, {
@@ -380,7 +386,8 @@ function updateSvg(
     email: STATIC_INFO.email,
     os: STATIC_INFO.os,
     linkedin: STATIC_INFO.linkedin,
-    discord: STATIC_INFO.discord,
+    malt: STATIC_INFO.malt,
+    bluesky: STATIC_INFO.bluesky,
     ide: STATIC_INFO.ide,
   });
 })();
