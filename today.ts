@@ -4,7 +4,6 @@ import { DOMParser, XMLSerializer } from "@xmldom/xmldom";
 import * as xpath from "xpath";
 
 const TOKEN = (process.env.ACCESS_TOKEN || process.env.GITHUB_TOKEN || "").trim();
-// Prefer an explicit USER_NAME secret, fall back to the actor, then the repo owner (for scheduled/workflow runs)
 const repoOwnerFallback = (process.env.GITHUB_REPOSITORY || "").split("/")[0] || "";
 const USER = (process.env.USER_NAME || process.env.GITHUB_ACTOR || repoOwnerFallback || "").trim();
 const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-25").trim(); 
@@ -342,15 +341,14 @@ function updateSvg(
     });
   } else {
     // local preview placeholders
-    total = 12;
-    stars = 34;
-    contributed = 5;
-    followers = 7;
-    commits = 2116;
-    locLines = 446276;
-    locBytes = 523178;
+    total = 0;
+    stars = 0;
+    contributed = 0;
+    followers = 0;
+    commits = 0;
+    locLines = 0;
+    locBytes = 0;
     topLanguages = ["TypeScript", "JavaScript", "Python"];
-    console.log('running in preview mode with placeholder stats');
   }
   const age = ageString(BIRTHDATE);
   updateSvg("light_mode.svg", ascii, {
