@@ -297,7 +297,7 @@ function updateSvg(
     put(doc, "lang2_data", p.topLanguages[1] || "N/A");
     put(doc, "lang3_data", p.topLanguages[2] || "N/A");
     // Only add padding for the first language since they're next to each other
-    padDots(doc, "lang1_data", p.topLanguages[0] || "N/A", 20);
+    padDots(doc, "lang1_data", p.topLanguages[0] || "N/A", 28);
   }
   
   // Static personal info with padding

@@ -8,7 +8,7 @@
   </style>
   <rect width="985" height="550" rx="15" fill="#161b22"/>
   <!-- ASCII will be injected into the <pre id="ascii_payload"> element below -->
-  <foreignObject x="15" y="145" width="360" height="500">
+  <foreignObject x="0" y="145" width="360" height="500">
     <pre xmlns="http://www.w3.org/1999/xhtml" class="mono" id="ascii_payload" style="font-family: monospace; font-size: 7px; white-space: pre; color: #ffffff;">                  ---------------------------------------
                  ----------------------------------------------
                  --------------------------------------------------
@@ -43,7 +43,7 @@
   </foreignObject>
 
   <!-- Colonne droite optimisée -->
-  <g class="mono" transform="translate(390,50)">
+  <g class="mono" transform="translate(370,50)">
     <!-- R.DIF@Profile Section -->
     <text y="0">
       <tspan class="h">R.DIF@Profile</tspan>
@@ -80,11 +80,11 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Programming</tspan>: 
-        <tspan class="cc" id="lang1_data_dots"> ................... </tspan>
+        <tspan class="cc" id="lang1_data_dots"> .................. </tspan>
         <tspan class="val" id="lang1_data">TypeScript</tspan>, 
-        <tspan class="cc" id="lang2_data_dots"></tspan>
+        <tspan class="cc" id="lang2_data_dots"/>
         <tspan class="val" id="lang2_data">JavaScript</tspan>, 
-        <tspan class="cc" id="lang3_data_dots"></tspan>
+        <tspan class="cc" id="lang3_data_dots"/>
         <tspan class="val" id="lang3_data">Python</tspan>
       </tspan>
 
