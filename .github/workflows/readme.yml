@@ -1,33 +1,71 @@
 name: README build
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   schedule:
-    - cron: "0 7 * * *"
+    # Original: runs at 07:00 UTC daily (which is 09:00 Paris in CEST / 08:00 Paris in CET)
+    # If you want the job to run at 07:00 Paris local time year-round, use two entries
+    # to account for Daylight Saving Time (CEST UTC+2 vs CET UTC+1).
+    # Apr - Oct (CEST, UTC+2): run at 05:00 UTC -> 07:00 Paris
+    - cron: "0 5 * 4-10 *"
+    # Nov - Mar (CET, UTC+1): run at 06:00 UTC -> 07:00 Paris
+    - cron: "0 6 * 1-3,11-12 *"
 permissions:
   contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency:
+      group: readme-build-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
       - run: npm ci
       - name: Generate SVGs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USER_NAME: rahmoundif
-          BIRTHDATE: "1990-11-25"
+          USER_NAME: ${{ secrets.USER_NAME }}
+          BIRTHDATE: ${{ secrets.BIRTHDATE }}
         run: |
           npm run build
           npm run update
+      - name: Install XML validation tool
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y libxml2-utils
+
+      - name: Validate generated SVGs
+        run: |
+          # Fail if any SVG is not well-formed XML
+          set -e
+          find . -type f -name "*_mode.svg" -print0 | xargs -0 -n1 xmllint --noout
+
+      - name: Debug git status before commit
+        run: |
+          echo "=== Git status ==="
+          git status --porcelain
+          echo "=== Files that would be added ==="
+          git add -A
+          git status --porcelain
+          echo "=== Diff to be committed ==="
+          git --no-pager diff --cached --name-only || true
+          git --no-pager diff --cached || true
+
       - name: Commit & push if changed
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name  "github-actions[bot]"
           git add -A
-          git diff --quiet || git commit -m "chore: update SVGs [skip ci]"
-          git push
+          if git diff --quiet --cached; then
+            echo "No changes to commit"
+          else
+            echo "Changes detected, committing..."
+            git commit -m "chore: update SVGs [skip ci]"
+            echo "Pushing to remote..."
+            git push
+            echo "Push completed successfully"
+          fi
