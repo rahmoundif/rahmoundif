@@ -182,12 +182,12 @@ async function getTopLanguages() {
     cursor = repos.pageInfo.endCursor;
   }
 
-  // Sort by size, filter out HTML/CSS, and get top programming languages
-  const excludedLanguages = new Set(['HTML', 'CSS', 'SCSS', 'Sass', 'Less']);
+  // Sort by size, filter none programming languages, and get top programming languages
+  const excludedLanguages = new Set(['HTML', 'CSS', 'SCSS', 'Sass', 'Less','Markdown', 'MDX', 'reStructuredText', 'AsciiDoc','YAML', 'JSON', 'TOML', 'INI', 'XML', 'SVG','Dockerfile', 'Makefile', 'Shell', 'Batchfile', 'PowerShell','HCL', 'Nix','Jupyter Notebook', 'TeX', 'Handlebars', 'Mustache', 'Pug', 'EJS', 'Liquid', 'Twig']);
   const sortedLanguages = Array.from(languageMap.entries())
     .filter(([name]) => !excludedLanguages.has(name))
     .sort(([,a], [,b]) => b - a)
-    .slice(0, 5)
+    .slice(0, 3)
     .map(([name]) => name);
 
   return sortedLanguages;
@@ -266,20 +266,21 @@ function updateSvg(
 
   // Stats
   put(doc, "age_data", p.age);
-  padDots(doc, "age_data", p.age, 22);
+  padDots(doc, "age_data", p.age, 53);
   const rs = fmt(p.repos);
   put(doc, "repo_data", rs);
-  padDots(doc, "repo_data", rs, 6);
+  padDots(doc, "repo_data", rs, 10);
   const st = fmt(p.stars);
   put(doc, "star_data", st);
-  padDots(doc, "star_data", st, 11);
+  padDots(doc, "star_data", st, 14
+  );
   const fl = fmt(p.followers);
   put(doc, "follower_data", fl);
-  padDots(doc, "follower_data", fl, 7);
+  padDots(doc, "follower_data", fl, 10);
   put(doc, "contrib_data", fmt(p.contributed));
   if (typeof p.commits === "number") {
     put(doc, "commit_data", fmt(p.commits));
-    padDots(doc, "commit_data", String(p.commits), 15);
+    padDots(doc, "commit_data", String(p.commits), 27);
   }
   if (typeof p.locLines === "number") {
     put(doc, "loc_data", fmt(p.locLines));
@@ -293,15 +294,47 @@ function updateSvg(
     put(doc, "lang1_data", p.topLanguages[0] || "N/A");
     put(doc, "lang2_data", p.topLanguages[1] || "N/A");
     put(doc, "lang3_data", p.topLanguages[2] || "N/A");
+    // Ensure dot padding exists for languages
+    padDots(doc, "lang1_data", p.topLanguages[0] || "N/A", 29);
+    padDots(doc, "lang2_data", p.topLanguages[1] || "N/A", 0);
+    padDots(doc, "lang3_data", p.topLanguages[2] || "N/A", 0);
   }
   
-  // Static personal info
-  if (p.email) put(doc, "email_data", p.email);
-  if (p.os) put(doc, "os_data", p.os);
-  if (p.linkedin) put(doc, "linkedin_data", p.linkedin);
-  if (p.malt) put(doc, "malt_data", p.malt);
-  if (p.bluesky) put(doc, "bluesky_data", p.bluesky);
-  if (p.ide) put(doc, "ide_data", p.ide);
+  // Static personal info with padding
+  if (p.email) {
+    put(doc, "email_data", p.email);
+    padDots(doc, "email_data", p.email, 54);
+  }
+  if (p.os) {
+    put(doc, "os_data", p.os);
+    padDots(doc, "os_data", p.os, 57);
+  }
+  if (p.linkedin) {
+    put(doc, "linkedin_data", p.linkedin);
+    padDots(doc, "linkedin_data", p.linkedin, 51);
+  }
+  if (p.malt) {
+    put(doc, "malt_data", p.malt);
+    padDots(doc, "malt_data", p.malt, 55);
+  }
+  if (p.bluesky) {
+    put(doc, "bluesky_data", p.bluesky);
+    padDots(doc, "bluesky_data", p.bluesky, 52);
+  }
+  if (p.ide) {
+    put(doc, "ide_data", p.ide);
+    padDots(doc, "ide_data", p.ide, 56);
+  }
+  
+  // Static fields padding
+  padDots(doc, "host_data", "Netlify, Vercel, Hostinger", 55);
+  padDots(doc, "frameworks_data", "Next.js, Angular", 49);
+  padDots(doc, "languages_data", "English, French", 50);
+  
+  // Lines of Code padding
+  if (typeof p.locLines === "number") {
+    padDots(doc, "loc_data", fmt(p.locLines), 46);
+  }
 
   writeFileSync(path, new XMLSerializer().serializeToString(doc), "utf8");
   console.log(`updated ${path}`);
@@ -350,8 +383,8 @@ function updateSvg(
     stars = 0;
     contributed = 0;
     followers = 0;
-    commits = 0;
-    locLines = 0;
+    commits = 493;
+    locLines = 260097;
     locBytes = 0;
     topLanguages = ["TypeScript", "JavaScript", "Python"];
   }

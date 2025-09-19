@@ -2,7 +2,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "update": "node dist/today.js"
+    "update": "node dist/today.js",
+    "build-run": "npm run build && node dist/today.js",
+    "start": "node dist/today.js"
   },
   "dependencies": {
     "@octokit/graphql": "^7.0.1",
