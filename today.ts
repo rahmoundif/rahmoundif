@@ -182,14 +182,16 @@ async function getTopLanguages() {
     cursor = repos.pageInfo.endCursor;
   }
 
-  // Sort by size, filter none programming languages, and get top programming languages
-  const excludedLanguages = new Set(['HTML', 'CSS', 'SCSS', 'Sass', 'Less','Markdown', 'MDX', 'reStructuredText', 'AsciiDoc','YAML', 'JSON', 'TOML', 'INI', 'XML', 'SVG','Dockerfile', 'Makefile', 'Shell', 'Batchfile', 'PowerShell','HCL', 'Nix','Jupyter Notebook', 'TeX', 'Handlebars', 'Mustache', 'Pug', 'EJS', 'Liquid', 'Twig']);
-  const sortedLanguages = Array.from(languageMap.entries())
+  // Less restrictive filter - only exclude obvious non-programming languages
+  const excludedLanguages = new Set(['HTML', 'CSS', 'SCSS', 'Sass', 'Less', 'Markdown', 'MDX', 'YAML', 'JSON', 'XML', 'SVG', 'Dockerfile', 'Makefile', 'Shell', 'Batchfile']);
+  const allLanguages = Array.from(languageMap.entries())
+    .sort(([,a], [,b]) => b - a);
+  const sortedLanguages = allLanguages
     .filter(([name]) => !excludedLanguages.has(name))
-    .sort(([,a], [,b]) => b - a)
     .slice(0, 3)
     .map(([name]) => name);
 
+  console.log('Filtered programming languages:', sortedLanguages);
   return sortedLanguages;
 }
 
@@ -294,10 +296,8 @@ function updateSvg(
     put(doc, "lang1_data", p.topLanguages[0] || "N/A");
     put(doc, "lang2_data", p.topLanguages[1] || "N/A");
     put(doc, "lang3_data", p.topLanguages[2] || "N/A");
-    // Ensure dot padding exists for languages
-    padDots(doc, "lang1_data", p.topLanguages[0] || "N/A", 29);
-    padDots(doc, "lang2_data", p.topLanguages[1] || "N/A", 0);
-    padDots(doc, "lang3_data", p.topLanguages[2] || "N/A", 0);
+    // Only add padding for the first language since they're next to each other
+    padDots(doc, "lang1_data", p.topLanguages[0] || "N/A", 20);
   }
   
   // Static personal info with padding
