@@ -268,10 +268,10 @@ function updateSvg(
 
   // Stats
   put(doc, "age_data", p.age);
-  padDots(doc, "age_data", p.age, 53);
+  padDots(doc, "age_data", p.age, 49);
   const rs = fmt(p.repos);
   put(doc, "repo_data", rs);
-  padDots(doc, "repo_data", rs, 10);
+  padDots(doc, "repo_data", rs, 6);
   const st = fmt(p.stars);
   put(doc, "star_data", st);
   padDots(doc, "star_data", st, 14
@@ -282,7 +282,7 @@ function updateSvg(
   put(doc, "contrib_data", fmt(p.contributed));
   if (typeof p.commits === "number") {
     put(doc, "commit_data", fmt(p.commits));
-    padDots(doc, "commit_data", String(p.commits), 27);
+    padDots(doc, "commit_data", String(p.commits), 23);
   }
   if (typeof p.locLines === "number") {
     put(doc, "loc_data", fmt(p.locLines));
@@ -303,37 +303,37 @@ function updateSvg(
   // Static personal info with padding
   if (p.email) {
     put(doc, "email_data", p.email);
-    padDots(doc, "email_data", p.email, 54);
+    padDots(doc, "email_data", p.email, 50);
   }
   if (p.os) {
     put(doc, "os_data", p.os);
-    padDots(doc, "os_data", p.os, 57);
+    padDots(doc, "os_data", p.os, 53);
   }
   if (p.linkedin) {
     put(doc, "linkedin_data", p.linkedin);
-    padDots(doc, "linkedin_data", p.linkedin, 51);
+    padDots(doc, "linkedin_data", p.linkedin, 47);
   }
   if (p.malt) {
     put(doc, "malt_data", p.malt);
-    padDots(doc, "malt_data", p.malt, 55);
+    padDots(doc, "malt_data", p.malt, 51);
   }
   if (p.bluesky) {
     put(doc, "bluesky_data", p.bluesky);
-    padDots(doc, "bluesky_data", p.bluesky, 52);
+    padDots(doc, "bluesky_data", p.bluesky, 48);
   }
   if (p.ide) {
     put(doc, "ide_data", p.ide);
-    padDots(doc, "ide_data", p.ide, 56);
+    padDots(doc, "ide_data", p.ide, 52);
   }
   
   // Static fields padding
-  padDots(doc, "host_data", "Netlify, Vercel, Hostinger", 55);
-  padDots(doc, "frameworks_data", "Next.js, Angular", 49);
-  padDots(doc, "languages_data", "English, French", 50);
+  padDots(doc, "host_data", "Netlify, Vercel, Hostinger", 51);
+  padDots(doc, "frameworks_data", "Next.js, Angular", 45);
+  padDots(doc, "languages_data", "English, French", 46);
   
   // Lines of Code padding
   if (typeof p.locLines === "number") {
-    padDots(doc, "loc_data", fmt(p.locLines), 46);
+    padDots(doc, "loc_data", fmt(p.locLines), 42);
   }
 
   writeFileSync(path, new XMLSerializer().serializeToString(doc), "utf8");
@@ -386,7 +386,7 @@ function updateSvg(
     commits = 493;
     locLines = 260097;
     locBytes = 0;
-    topLanguages = ["TypeScript", "JavaScript", "Python"];
+    topLanguages = ["TypeScript", "JavaScript", "c#"];
   }
   const age = ageString(BIRTHDATE);
   updateSvg("light_mode.svg", ascii, {
