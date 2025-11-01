@@ -60,7 +60,7 @@
         <tspan class="cc">• </tspan>
         <tspan class="key">Uptime</tspan>:
         <tspan class="cc" id="age_data_dots"> ..................... </tspan>
-        <tspan class="val" id="age_data">34 years, 11 months, 19 days</tspan>
+        <tspan class="val" id="age_data">34 years, 11 months, 20 days</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
@@ -153,7 +153,7 @@
       <tspan class="cc">• </tspan>
       <tspan class="key">Repos</tspan>:
       <tspan class="cc" id="repo_data_dots"> .... </tspan>
-      <tspan class="val" id="repo_data">28</tspan>
+      <tspan class="val" id="repo_data">27</tspan>
       <tspan> {</tspan>
       <tspan class="key">Contributed</tspan>:      <tspan class="val" id="contrib_data">4</tspan>
       <tspan>}</tspan>
@@ -166,7 +166,7 @@
         <tspan class="cc">• </tspan>
         <tspan class="key">Commits</tspan>:
         <tspan class="cc" id="commit_data_dots"> .................... </tspan>
-        <tspan class="val" id="commit_data">463</tspan>
+        <tspan class="val" id="commit_data">461</tspan>
         <tspan> | </tspan>
         <tspan class="key">Followers</tspan>:
         <tspan class="cc" id="follower_data_dots"> ......... </tspan>
