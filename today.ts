@@ -378,7 +378,7 @@ function updateSvg(
   // Static personal info with padding
   if (p.website) {
     put(doc, "email_data", p.website);
-    padDots(doc, "email_data", p.website, 45);
+    padDots(doc, "email_data", p.website, 49);
   }
   if (p.os) {
     put(doc, "os_data", p.os);
@@ -414,7 +414,7 @@ function updateSvg(
   }
   if (p.databases) {
     put(doc, "databases_data", p.databases);
-    padDots(doc, "databases_data", p.databases, 45);
+    padDots(doc, "databases_data", p.databases, 46);
   }
   if (p.styling) {
     put(doc, "styling_data", p.styling);
@@ -422,7 +422,7 @@ function updateSvg(
   }
   if (p.orm) {
     put(doc, "orm_data", p.orm);
-    padDots(doc, "orm_data", p.orm, 50);
+    padDots(doc, "orm_data", p.orm, 52);
   }
   if (p.api) {
     put(doc, "api_data", p.api);

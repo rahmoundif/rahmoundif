@@ -98,7 +98,7 @@
         <tspan class="cc">• </tspan>
         <tspan class="key">Frameworks/Lib</tspan>:
         <tspan class="cc" id="techStack_data_dots"> .......... </tspan>
-        <tspan class="val" id="techStack_data">React, Next, Node, Nest, PostgreSQL</tspan>
+        <tspan class="val" id="techStack_data">React, Svelte, Next, Node, Nest</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
