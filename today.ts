@@ -3,10 +3,20 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { DOMParser, XMLSerializer } from "@xmldom/xmldom";
 import * as xpath from "xpath";
 
-const TOKEN = (process.env.ACCESS_TOKEN || process.env.GITHUB_TOKEN || "").trim();
-const repoOwnerFallback = (process.env.GITHUB_REPOSITORY || "").split("/")[0] || "";
-const USER = (process.env.USER_NAME || process.env.GITHUB_ACTOR || repoOwnerFallback || "").trim();
-const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-25").trim(); 
+const TOKEN = (
+  process.env.ACCESS_TOKEN ||
+  process.env.GITHUB_TOKEN ||
+  ""
+).trim();
+const repoOwnerFallback =
+  (process.env.GITHUB_REPOSITORY || "").split("/")[0] || "";
+const USER = (
+  process.env.USER_NAME ||
+  process.env.GITHUB_ACTOR ||
+  repoOwnerFallback ||
+  ""
+).trim();
+const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-25").trim();
 
 // Static personal information
 const STATIC_INFO = {
@@ -15,10 +25,20 @@ const STATIC_INFO = {
   linkedin: "linkedin.com/in/rahmoundif",
   malt: "malt.fr/profile/rahmoundif",
   bluesky: "@rmoond.bsky.social",
-  ide: "VS Code"
+  ide: "VS Code",
+  role: "Freelance Developer",
+  experience: "1+ year Full Stack",
+  techStack: "TypeScript, React, Next, Angular, Node, Nest, PostgreSQL",
+  databases: "PostgreSQL, Supabase",
+  styling: "Tailwind CSS",
+  orm: "Drizzle ORM",
+  api: "REST, GraphQL",
+  testing: "Jest, Vitest, Playwright",
 };
 if (!TOKEN || !USER) {
-  console.warn("WARNING: Missing ACCESS_TOKEN/GITHUB_TOKEN or USER_NAME — running in preview mode (ASCII will be injected, stats will be placeholders).");
+  console.warn(
+    "WARNING: Missing ACCESS_TOKEN/GITHUB_TOKEN or USER_NAME — running in preview mode (ASCII will be injected, stats will be placeholders)."
+  );
 }
 
 const client = graphql.defaults({
@@ -30,9 +50,10 @@ function ageString(fromISO: string) {
   const from = new Date(fromISO),
     now = new Date();
   const days = Math.floor((+now - +from) / 86400000);
-  const y = Math.floor(days / 365),
-    m = Math.floor((days % 365) / 30),
-    d = (days % 365) % 30;
+  const y = Math.floor(days / 365);
+  const remainingDays = days % 365;
+  const m = Math.floor(remainingDays / 30);
+  const d = remainingDays % 30;
   const parts = [];
   if (y) parts.push(`${y} year${y > 1 ? "s" : ""}`);
   if (m) parts.push(`${m} month${m > 1 ? "s" : ""}`);
@@ -66,11 +87,11 @@ async function getOwnerStarsRepos() {
     stars = 0,
     total = 0,
     first = true;
-  
+
   const query = `query($login:String!,$cursor:String){
       user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER]){
         totalCount pageInfo{endCursor hasNextPage} edges{ node{ stargazers{ totalCount } } } } } }`;
-  
+
   type RepositoriesResponse = {
     user: {
       repositories: {
@@ -80,15 +101,22 @@ async function getOwnerStarsRepos() {
       };
     };
   };
-  
+
   while (true) {
-    const res: RepositoriesResponse = await client(query, { login: USER, cursor });
+    const res: RepositoriesResponse = await client(query, {
+      login: USER,
+      cursor,
+    });
     const r = res.user.repositories;
     if (first) {
       total = r.totalCount;
       first = false;
     }
-    stars += r.edges.reduce((s: number, e: { node: { stargazers: { totalCount: number } } }) => s + e.node.stargazers.totalCount, 0);
+    stars += r.edges.reduce(
+      (s: number, e: { node: { stargazers: { totalCount: number } } }) =>
+        s + e.node.stargazers.totalCount,
+      0
+    );
     if (!r.pageInfo.hasNextPage) break;
     cursor = r.pageInfo.endCursor;
   }
@@ -97,7 +125,9 @@ async function getOwnerStarsRepos() {
 async function getContributedRepos() {
   // Use repositoriesContributedTo which counts repositories the user has contributed to
   const q = `query($login:String!){ user(login:$login){ repositoriesContributedTo(first:1){ totalCount } } }`;
-  const res = await client<{ user: { repositoriesContributedTo: { totalCount: number } } }>(q, { login: USER });
+  const res = await client<{
+    user: { repositoriesContributedTo: { totalCount: number } };
+  }>(q, { login: USER });
   return res.user.repositoriesContributedTo.totalCount;
 }
 async function getFollowers() {
@@ -109,13 +139,21 @@ async function getFollowers() {
   return res.user.followers.totalCount;
 }
 
+async function getPullRequests() {
+  const res = await client<{ user: { pullRequests: { totalCount: number } } }>(
+    `
+    query($login:String!){ user(login:$login){ pullRequests(first:1){ totalCount } } }`,
+    { login: USER }
+  );
+  return res.user.pullRequests.totalCount;
+}
+
 async function getCommitContributions() {
   // Returns the user's total commit contributions (GitHub contributions collection)
   const q = `query($login:String!){ user(login:$login){ contributionsCollection{ totalCommitContributions } } }`;
-  const res = await client<{ user: { contributionsCollection: { totalCommitContributions: number } } }>(
-    q,
-    { login: USER }
-  );
+  const res = await client<{
+    user: { contributionsCollection: { totalCommitContributions: number } };
+  }>(q, { login: USER });
   return res.user.contributionsCollection.totalCommitContributions;
 }
 
@@ -154,14 +192,18 @@ async function getTopLanguages() {
   // Get top 3 programming languages by total bytes across all repositories
   let cursor: string | null = null;
   const languageMap = new Map<string, number>();
-  
+
   const query = `query($login:String!,$cursor:String){ user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER]){ pageInfo{endCursor hasNextPage} edges{ node{ languages(first:10){ edges{ node{name} size } } } } } } }`;
 
   type TopLangsResp = {
     user: {
       repositories: {
         pageInfo: { endCursor: string; hasNextPage: boolean };
-        edges: { node: { languages: { edges: { node: { name: string }; size: number }[] } } }[];
+        edges: {
+          node: {
+            languages: { edges: { node: { name: string }; size: number }[] };
+          };
+        }[];
       };
     };
   };
@@ -169,7 +211,7 @@ async function getTopLanguages() {
   while (true) {
     const res: TopLangsResp = await client(query, { login: USER, cursor });
     const repos = res.user.repositories;
-    
+
     for (const repo of repos.edges) {
       for (const lang of repo.node.languages.edges) {
         const name = lang.node.name;
@@ -177,21 +219,38 @@ async function getTopLanguages() {
         languageMap.set(name, (languageMap.get(name) || 0) + size);
       }
     }
-    
+
     if (!repos.pageInfo.hasNextPage) break;
     cursor = repos.pageInfo.endCursor;
   }
 
   // Less restrictive filter - only exclude obvious non-programming languages
-  const excludedLanguages = new Set(['HTML', 'CSS', 'SCSS', 'Sass', 'Less', 'Markdown', 'MDX', 'YAML', 'JSON', 'XML', 'SVG', 'Dockerfile', 'Makefile', 'Shell', 'Batchfile']);
-  const allLanguages = Array.from(languageMap.entries())
-    .sort(([,a], [,b]) => b - a);
+  const excludedLanguages = new Set([
+    "HTML",
+    "CSS",
+    "SCSS",
+    "Sass",
+    "Less",
+    "Markdown",
+    "MDX",
+    "YAML",
+    "JSON",
+    "XML",
+    "SVG",
+    "Dockerfile",
+    "Makefile",
+    "Shell",
+    "Batchfile",
+  ]);
+  const allLanguages = Array.from(languageMap.entries()).sort(
+    ([, a], [, b]) => b - a
+  );
   const sortedLanguages = allLanguages
     .filter(([name]) => !excludedLanguages.has(name))
     .slice(0, 3)
     .map(([name]) => name);
 
-  console.log('Filtered programming languages:', sortedLanguages);
+  console.log("Filtered programming languages:", sortedLanguages);
   return sortedLanguages;
 }
 
@@ -201,7 +260,7 @@ function updateSvg(
   p: {
     age: string;
     repos: number;
-    stars: number;
+    pullRequests: number;
     followers: number;
     contributed: number;
     commits?: number;
@@ -214,6 +273,14 @@ function updateSvg(
     malt?: string;
     bluesky?: string;
     ide?: string;
+    role?: string;
+    experience?: string;
+    techStack?: string;
+    databases?: string;
+    styling?: string;
+    orm?: string;
+    api?: string;
+    testing?: string;
   }
 ) {
   const xml = readFileSync(path, "utf8");
@@ -222,7 +289,10 @@ function updateSvg(
   const asciiNode = nodeById(doc, "ascii_payload");
   if (asciiNode) {
     // Trim leading/trailing blank lines from ascii
-    const lines = ascii.replace(/\r/g, "").split("\n").map(l => l.replace(/\s+$/g, ""));
+    const lines = ascii
+      .replace(/\r/g, "")
+      .split("\n")
+      .map((l) => l.replace(/\s+$/g, ""));
     // remove leading/trailing empty lines
     while (lines.length && lines[0].trim() === "") lines.shift();
     while (lines.length && lines[lines.length - 1].trim() === "") lines.pop();
@@ -246,7 +316,9 @@ function updateSvg(
     // Estimate width per character in monospace at font-size 16px: approx 9px.
     // Compute a font-size that fits within targetPx, but clamp to reasonable bounds.
     const approxCharWidthAt16 = 9; // px per char at font-size 16
-    const rawFontSize = Math.floor((targetPx / Math.max(1, maxChars)) * (16 / approxCharWidthAt16));
+    const rawFontSize = Math.floor(
+      (targetPx / Math.max(1, maxChars)) * (16 / approxCharWidthAt16)
+    );
     const fontSize = Math.max(6, Math.min(20, rawFontSize || 8));
 
     // Clear existing content
@@ -257,8 +329,11 @@ function updateSvg(
     if ((asciiNode as any).setAttribute) {
       // If updating the dark SVG, force ASCII color to white for visibility
       const isDark = /dark/i.test(path);
-      const colorStyle = isDark ? 'color: #ffffff;' : '';
-      (asciiNode as any).setAttribute('style', `font-family: monospace; font-size: ${fontSize}px; white-space: pre; ${colorStyle}`);
+      const colorStyle = isDark ? "color: #ffffff;" : "";
+      (asciiNode as any).setAttribute(
+        "style",
+        `font-family: monospace; font-size: ${fontSize}px; white-space: pre; ${colorStyle}`
+      );
     }
 
     // Rebuild ascii text with trimmed lines
@@ -272,10 +347,9 @@ function updateSvg(
   const rs = fmt(p.repos);
   put(doc, "repo_data", rs);
   padDots(doc, "repo_data", rs, 6);
-  const st = fmt(p.stars);
-  put(doc, "star_data", st);
-  padDots(doc, "star_data", st, 14
-  );
+  const pr = fmt(p.pullRequests);
+  put(doc, "pr_data", pr);
+  padDots(doc, "pr_data", pr, 14);
   const fl = fmt(p.followers);
   put(doc, "follower_data", fl);
   padDots(doc, "follower_data", fl, 10);
@@ -290,16 +364,17 @@ function updateSvg(
   if (typeof p.locBytes === "number") {
     put(doc, "loc_add", fmt(p.locBytes));
   }
-  
+
   // Top Languages
   if (p.topLanguages && p.topLanguages.length > 0) {
     put(doc, "lang1_data", p.topLanguages[0] || "N/A");
     put(doc, "lang2_data", p.topLanguages[1] || "N/A");
     put(doc, "lang3_data", p.topLanguages[2] || "N/A");
+    put(doc, "lang4_data", p.topLanguages[3] || "N/A");
     // Only add padding for the first language since they're next to each other
-    padDots(doc, "lang1_data", p.topLanguages[0] || "N/A", 28);
+    padDots(doc, "lang1_data", p.topLanguages[0] || "N/A", 20);
   }
-  
+
   // Static personal info with padding
   if (p.email) {
     put(doc, "email_data", p.email);
@@ -325,12 +400,42 @@ function updateSvg(
     put(doc, "ide_data", p.ide);
     padDots(doc, "ide_data", p.ide, 52);
   }
-  
+  if (p.role) {
+    put(doc, "role_data", p.role);
+    padDots(doc, "role_data", p.role, 51);
+  }
+  if (p.experience) {
+    put(doc, "experience_data", p.experience);
+    padDots(doc, "experience_data", p.experience, 45);
+  }
+  if (p.techStack) {
+    put(doc, "techStack_data", p.techStack);
+    padDots(doc, "techStack_data", p.techStack, 45);
+  }
+  if (p.databases) {
+    put(doc, "databases_data", p.databases);
+    padDots(doc, "databases_data", p.databases, 45);
+  }
+  if (p.styling) {
+    put(doc, "styling_data", p.styling);
+    padDots(doc, "styling_data", p.styling, 45);
+  }
+  if (p.orm) {
+    put(doc, "orm_data", p.orm);
+    padDots(doc, "orm_data", p.orm, 45);
+  }
+  if (p.api) {
+    put(doc, "api_data", p.api);
+    padDots(doc, "api_data", p.api, 45);
+  }
+  if (p.testing) {
+    put(doc, "testing_data", p.testing);
+    padDots(doc, "testing_data", p.testing, 45);
+  }
+
   // Static fields padding
-  padDots(doc, "host_data", "Netlify, Vercel, Hostinger", 51);
-  padDots(doc, "frameworks_data", "Next.js, Angular", 45);
   padDots(doc, "languages_data", "English, French", 46);
-  
+
   // Lines of Code padding
   if (typeof p.locLines === "number") {
     padDots(doc, "loc_data", fmt(p.locLines), 42);
@@ -343,7 +448,7 @@ function updateSvg(
 (async () => {
   const ascii = readFileSync("ascii.txt", "utf8");
   let total = 0,
-    stars = 0,
+    pullRequests = 0,
     contributed = 0,
     followers = 0;
   let commits: number | undefined = undefined;
@@ -351,25 +456,35 @@ function updateSvg(
   let locBytes: number | undefined = undefined;
   let topLanguages: string[] = [];
   if (TOKEN && USER) {
-    const [ownerRes, contributedRes, followersRes, commitsRes, locRes, topLangsRes] = await Promise.all([
+    const [
+      ownerRes,
+      contributedRes,
+      followersRes,
+      pullRequestsRes,
+      commitsRes,
+      locRes,
+      topLangsRes,
+    ] = await Promise.all([
       getOwnerStarsRepos(),
       getContributedRepos(),
       getFollowers(),
+      getPullRequests(),
       getCommitContributions(),
       getLocEstimate(),
       getTopLanguages(),
     ]);
-    ({ total, stars } = ownerRes as any);
+    ({ total } = ownerRes as any);
     contributed = contributedRes as any;
     followers = followersRes as any;
-  commits = commitsRes as number;
-  locLines = (locRes as any).lines as number;
-  locBytes = (locRes as any).bytes as number;
+    pullRequests = pullRequestsRes as number;
+    commits = commitsRes as number;
+    locLines = (locRes as any).lines as number;
+    locBytes = (locRes as any).bytes as number;
     topLanguages = topLangsRes as string[];
-    console.log('fetched stats:', {
+    console.log("fetched stats:", {
       user: USER,
       repos: total,
-      stars,
+      pullRequests,
       contributed,
       followers,
       commits,
@@ -380,7 +495,7 @@ function updateSvg(
   } else {
     // local preview placeholders
     total = 0;
-    stars = 0;
+    pullRequests = 0;
     contributed = 0;
     followers = 0;
     commits = 493;
@@ -392,7 +507,7 @@ function updateSvg(
   updateSvg("light_mode.svg", ascii, {
     age,
     repos: total,
-    stars,
+    pullRequests,
     followers,
     contributed,
     commits: typeof commits === "number" ? commits : undefined,
@@ -405,11 +520,19 @@ function updateSvg(
     malt: STATIC_INFO.malt,
     bluesky: STATIC_INFO.bluesky,
     ide: STATIC_INFO.ide,
+    role: STATIC_INFO.role,
+    experience: STATIC_INFO.experience,
+    techStack: STATIC_INFO.techStack,
+    databases: STATIC_INFO.databases,
+    styling: STATIC_INFO.styling,
+    orm: STATIC_INFO.orm,
+    api: STATIC_INFO.api,
+    testing: STATIC_INFO.testing,
   });
   updateSvg("dark_mode.svg", ascii, {
     age,
     repos: total,
-    stars,
+    pullRequests,
     followers,
     contributed,
     commits: typeof commits === "number" ? commits : undefined,
@@ -422,5 +545,13 @@ function updateSvg(
     malt: STATIC_INFO.malt,
     bluesky: STATIC_INFO.bluesky,
     ide: STATIC_INFO.ide,
+    role: STATIC_INFO.role,
+    experience: STATIC_INFO.experience,
+    techStack: STATIC_INFO.techStack,
+    databases: STATIC_INFO.databases,
+    styling: STATIC_INFO.styling,
+    orm: STATIC_INFO.orm,
+    api: STATIC_INFO.api,
+    testing: STATIC_INFO.testing,
   });
 })();

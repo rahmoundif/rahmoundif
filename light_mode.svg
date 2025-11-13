@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="985" height="550" font-family="Consolas, ui-monospace, monospace" font-size="16">
+<svg xmlns="http://www.w3.org/2000/svg" width="985" height="700" font-family="Consolas, ui-monospace, monospace" font-size="16">
   <style>
     .mono { fill:#24292f; }
     .key  { fill:#953800; }
     .val  { fill:#0a3069; }
     .cc   { fill:#c2cfde; }
   </style>
-  <rect width="985" height="550" rx="15" fill="#f6f8fa"/>
+  <rect width="985" height="700" rx="15" fill="#f6f8fa"/>
   <!-- ASCII will be injected into the <pre id="ascii_payload"> element below -->
   <foreignObject x="0" y="145" width="360" height="500">
     <pre xmlns="http://www.w3.org/1999/xhtml" class="mono" id="ascii_payload" style="font-family: monospace; font-size: 7px; white-space: pre; ">                  ---------------------------------------
@@ -15,6 +15,7 @@
                  ----------------------------------------------------
                  ------------------------------------------------------
                  --------------------------------------------------------
+                 -------------                         -------------------
                  -----------    #####################     ----------------
                  -----------   ##########################    --------------
                  -----------   #############################   -------------
@@ -33,7 +34,7 @@
                  -----------   ###########      ############  --------------
                  -----------   ###########       ############  ------------
                  -----------   ###########        ############   ---------
-                 -----------    #########          #############  ------
+                 -----------                       #############  ------
                  ---------------------------------   #############  ---
                  -----------------------------------  ##############
                  -------------------------------------  ###############
@@ -65,9 +66,9 @@
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
-        <tspan class="key">Host</tspan>:
-        <tspan class="cc" id="host_data_dots"> ......................... </tspan>
-        <tspan class="val">Netlify, Vercel, Hostinger</tspan>
+        <tspan class="key">Role</tspan>:
+        <tspan class="cc" id="role_data_dots"> ................................ </tspan>
+        <tspan class="val" id="role_data">Freelance Developer</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
@@ -80,19 +81,61 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Programming</tspan>: 
-        <tspan class="cc" id="lang1_data_dots"> .................. </tspan>
+        <tspan class="cc" id="lang1_data_dots"> .............. </tspan>
         <tspan class="val" id="lang1_data">TypeScript</tspan>, 
-        <tspan class="cc" id="lang2_data_dots"/>
         <tspan class="val" id="lang2_data">JavaScript</tspan>, 
-        <tspan class="cc" id="lang3_data_dots"/>
-        <tspan class="val" id="lang3_data">c#</tspan>
+        <tspan class="val" id="lang3_data">c#</tspan>,
+        <tspan class="val" id="lang4_data">c#</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
-        <tspan class="key">Frameworks</tspan>:
-        <tspan class="cc" id="frameworks_data_dots"> ............................. </tspan>
-        <tspan class="val">Next.js, Angular</tspan>
+        <tspan class="key">Experience</tspan>:
+        <tspan class="cc" id="experience_data_dots"> ........................... </tspan>
+        <tspan class="val" id="experience_data">1+ year Full Stack</tspan>
+      </tspan>
+
+      <tspan x="0" dy="25">
+        <tspan class="cc">• </tspan>
+        <tspan class="key">Frameworks/Lib</tspan>:
+        <tspan class="cc" id="techStack_data_dots"> ......... </tspan>
+        <tspan class="val" id="techStack_data">React, Next, Node, Express, Nest</tspan>
+      </tspan>
+
+      <tspan x="0" dy="25">
+        <tspan class="cc">• </tspan>
+        <tspan class="key">Styling</tspan>:
+        <tspan class="cc" id="styling_data_dots"> ................................... </tspan>
+        <tspan class="val" id="styling_data">Tailwind, CSS</tspan>
+      </tspan>
+
+      <tspan x="0" dy="25">
+        <tspan class="cc">• </tspan>
+        <tspan class="key">Databases</tspan>:
+        <tspan class="cc" id="databases_data_dots"> .......................... </tspan>
+        <tspan class="val" id="databases_data">PostgreSQL, Supabase</tspan>
+      </tspan>
+
+
+      <tspan x="0" dy="25">
+        <tspan class="cc">• </tspan>
+        <tspan class="key">ORM</tspan>:
+        <tspan class="cc" id="orm_data_dots"> ......................................... </tspan>
+        <tspan class="val" id="orm_data">Drizzle ORM</tspan>
+      </tspan>
+
+      <tspan x="0" dy="25">
+        <tspan class="cc">• </tspan>
+        <tspan class="key">API</tspan>:
+        <tspan class="cc" id="api_data_dots"> ....................................... </tspan>
+        <tspan class="val" id="api_data">REST, GraphQL</tspan>
+      </tspan>
+
+      <tspan x="0" dy="25">
+        <tspan class="cc">• </tspan>
+        <tspan class="key">Testing</tspan>:
+        <tspan class="cc" id="testing_data_dots"> ........................ </tspan>
+        <tspan class="val" id="testing_data">Jest, Vitest, Playwright</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
@@ -104,16 +147,16 @@
     </text>
 
     <!-- Contact Section -->
-    <text y="230">
+    <text y="378">
       <tspan class="h">Contact</tspan>
     </text>
-    <line x1="80" y1="226" x2="560" y2="226" stroke="#2a313b" stroke-width="1"/>
+    <line x1="80" y1="372" x2="560" y2="372" stroke="#2a313b" stroke-width="1"/>
 
-    <text x="0" y="265">
+    <text x="0" y="410">
       <tspan class="cc">• </tspan>
-      <tspan class="key">Email</tspan>:
-      <tspan class="cc" id="email_data_dots"> ............................. </tspan>
-      <tspan class="val" id="email_data">rahmoun.dif@gmail.com</tspan>
+      <tspan class="key">Website</tspan>:
+      <tspan class="cc" id="email_data_dots"> .................................. </tspan>
+      <tspan class="val" id="email_data">rahmoundif.dev</tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
@@ -144,12 +187,12 @@
     </text>
 
     <!-- GitHub Stats Section -->
-    <text y="378">
+    <text y="519">
       <tspan class="h">GitHub Stats</tspan>
     </text>
-    <line x1="125" y1="373" x2="560" y2="373" stroke="#2a313b" stroke-width="1"/>
+    <line x1="125" y1="515" x2="560" y2="515" stroke="#2a313b" stroke-width="1"/>
 
-    <text x="0" y="410">
+    <text x="0" y="550">
       <tspan class="cc">• </tspan>
       <tspan class="key">Repos</tspan>:
       <tspan class="cc" id="repo_data_dots"> ..... </tspan>
@@ -158,9 +201,9 @@
       <tspan class="key">Contributed</tspan>:      <tspan class="val" id="contrib_data">0</tspan>
       <tspan>}</tspan>
       <tspan> | </tspan>
-      <tspan class="key">Stars</tspan>:
-      <tspan class="cc" id="star_data_dots"> ............. </tspan>
-      <tspan class="val" id="star_data">0</tspan>
+      <tspan class="key">PRs</tspan>:
+      <tspan class="cc" id="pr_data_dots"> ............. </tspan>
+      <tspan class="val" id="pr_data">0</tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
