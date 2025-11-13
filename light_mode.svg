@@ -84,13 +84,8 @@
         <tspan class="cc" id="lang1_data_dots"> .............. </tspan>
         <tspan class="val" id="lang1_data">TypeScript</tspan>, 
         <tspan class="val" id="lang2_data">JavaScript</tspan>, 
-<<<<<<< HEAD
         <tspan class="val" id="lang3_data">c#</tspan>,
         <tspan class="val" id="lang4_data">c#</tspan>
-=======
-        <tspan class="cc" id="lang3_data_dots"/>
-        <tspan class="val" id="lang3_data">C#</tspan>
->>>>>>> ddebb751378e86eacd87737885f5ceded30ee61e
       </tspan>
 
       <tspan x="0" dy="25">
