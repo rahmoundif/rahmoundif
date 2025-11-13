@@ -28,7 +28,7 @@ const STATIC_INFO = {
   ide: "VS Code",
   role: "Freelance Developer",
   experience: "1+ year Full Stack",
-  techStack: "React, Next, Node, Nest, PostgreSQL",
+  techStack: "React, Svelte, Next, Node, Nest",
   databases: "PostgreSQL, Supabase",
   styling: "Tailwind CSS",
   orm: "Drizzle ORM",
