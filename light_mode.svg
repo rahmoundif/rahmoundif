@@ -97,21 +97,21 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Frameworks/Lib</tspan>:
-        <tspan class="cc" id="techStack_data_dots"></tspan>
-        <tspan class="val" id="techStack_data">TypeScript, React, Next, Angular, Node, Nest, PostgreSQL</tspan>
+        <tspan class="cc" id="techStack_data_dots">. </tspan>
+        <tspan class="val" id="techStack_data">React, Next, Svelte, Node, Express, Nest</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Styling</tspan>:
-        <tspan class="cc" id="styling_data_dots"> ................................. </tspan>
-        <tspan class="val" id="styling_data">Tailwind CSS</tspan>
+        <tspan class="cc" id="styling_data_dots"> ................................... </tspan>
+        <tspan class="val" id="styling_data">Tailwind, CSS</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Databases</tspan>:
-        <tspan class="cc" id="databases_data_dots"> ......................... </tspan>
+        <tspan class="cc" id="databases_data_dots"> .......................... </tspan>
         <tspan class="val" id="databases_data">PostgreSQL, Supabase</tspan>
       </tspan>
 
@@ -119,21 +119,21 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">ORM</tspan>:
-        <tspan class="cc" id="orm_data_dots"> .................................. </tspan>
+        <tspan class="cc" id="orm_data_dots"> ......................................... </tspan>
         <tspan class="val" id="orm_data">Drizzle ORM</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">API</tspan>:
-        <tspan class="cc" id="api_data_dots"> ................................ </tspan>
+        <tspan class="cc" id="api_data_dots"> ....................................... </tspan>
         <tspan class="val" id="api_data">REST, GraphQL</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Testing</tspan>:
-        <tspan class="cc" id="testing_data_dots"> ..................... </tspan>
+        <tspan class="cc" id="testing_data_dots"> ........................ </tspan>
         <tspan class="val" id="testing_data">Jest, Vitest, Playwright</tspan>
       </tspan>
 
@@ -154,7 +154,7 @@
     <text x="0" y="410">
       <tspan class="cc">• </tspan>
       <tspan class="key">Website</tspan>:
-      <tspan class="cc" id="email_data_dots"> ............................. </tspan>
+      <tspan class="cc" id="email_data_dots"> ........................... </tspan>
       <tspan class="val" id="email_data">rahmoun.dif@gmail.com</tspan>
 
       <tspan x="0" dy="25">
@@ -201,7 +201,7 @@
       <tspan>}</tspan>
       <tspan> | </tspan>
       <tspan class="key">PRs</tspan>:
-      <tspan class="cc" id="pr_data_dots"> ............ </tspan>
+      <tspan class="cc" id="pr_data_dots"> .............. </tspan>
       <tspan class="val" id="pr_data">82</tspan>
 
       <tspan x="0" dy="25">

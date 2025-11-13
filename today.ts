@@ -247,7 +247,7 @@ async function getTopLanguages() {
   );
   const sortedLanguages = allLanguages
     .filter(([name]) => !excludedLanguages.has(name))
-    .slice(0, 3)
+    .slice(0, 4)
     .map(([name]) => name);
 
   console.log("Filtered programming languages:", sortedLanguages);
