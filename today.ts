@@ -20,7 +20,7 @@ const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-25").trim();
 
 // Static personal information
 const STATIC_INFO = {
-  email: "rahmoun.dif@gmail.com",
+  website: "rahmoundif.dev",
   os: "Windows 11",
   linkedin: "linkedin.com/in/rahmoundif",
   malt: "malt.fr/profile/rahmoundif",
@@ -267,7 +267,7 @@ function updateSvg(
     locLines?: number;
     locBytes?: number;
     topLanguages?: string[];
-    email?: string;
+    website?: string;
     os?: string;
     linkedin?: string;
     malt?: string;
@@ -349,7 +349,7 @@ function updateSvg(
   padDots(doc, "repo_data", rs, 6);
   const pr = fmt(p.pullRequests);
   put(doc, "pr_data", pr);
-  padDots(doc, "pr_data", pr, 14);
+  padDots(doc, "pr_data", pr, 16);
   const fl = fmt(p.followers);
   put(doc, "follower_data", fl);
   padDots(doc, "follower_data", fl, 10);
@@ -376,9 +376,9 @@ function updateSvg(
   }
 
   // Static personal info with padding
-  if (p.email) {
-    put(doc, "email_data", p.email);
-    padDots(doc, "email_data", p.email, 50);
+  if (p.website) {
+    put(doc, "email_data", p.website);
+    padDots(doc, "email_data", p.website, 45);
   }
   if (p.os) {
     put(doc, "os_data", p.os);
@@ -418,19 +418,19 @@ function updateSvg(
   }
   if (p.styling) {
     put(doc, "styling_data", p.styling);
-    padDots(doc, "styling_data", p.styling, 45);
+    padDots(doc, "styling_data", p.styling, 48);
   }
   if (p.orm) {
     put(doc, "orm_data", p.orm);
-    padDots(doc, "orm_data", p.orm, 45);
+    padDots(doc, "orm_data", p.orm, 50);
   }
   if (p.api) {
     put(doc, "api_data", p.api);
-    padDots(doc, "api_data", p.api, 45);
+    padDots(doc, "api_data", p.api, 52);
   }
   if (p.testing) {
     put(doc, "testing_data", p.testing);
-    padDots(doc, "testing_data", p.testing, 45);
+    padDots(doc, "testing_data", p.testing, 49);
   }
 
   // Static fields padding
@@ -514,7 +514,7 @@ function updateSvg(
     locLines: typeof locLines === "number" ? locLines : undefined,
     locBytes: typeof locBytes === "number" ? locBytes : undefined,
     topLanguages,
-    email: STATIC_INFO.email,
+    website: STATIC_INFO.website,
     os: STATIC_INFO.os,
     linkedin: STATIC_INFO.linkedin,
     malt: STATIC_INFO.malt,
@@ -539,7 +539,7 @@ function updateSvg(
     locLines: typeof locLines === "number" ? locLines : undefined,
     locBytes: typeof locBytes === "number" ? locBytes : undefined,
     topLanguages,
-    email: STATIC_INFO.email,
+    website: STATIC_INFO.website,
     os: STATIC_INFO.os,
     linkedin: STATIC_INFO.linkedin,
     malt: STATIC_INFO.malt,
