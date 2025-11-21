@@ -410,7 +410,7 @@ function updateSvg(
   }
   if (p.techStack) {
     put(doc, "techStack_data", p.techStack);
-    padDots(doc, "techStack_data", p.techStack, 42);
+    padDots(doc, "techStack_data", p.techStack, 41);
   }
   if (p.databases) {
     put(doc, "databases_data", p.databases);
