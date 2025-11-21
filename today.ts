@@ -16,7 +16,7 @@ const USER = (
   repoOwnerFallback ||
   ""
 ).trim();
-const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-25").trim();
+const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-16").trim();
 
 // Static personal information
 const STATIC_INFO = {
