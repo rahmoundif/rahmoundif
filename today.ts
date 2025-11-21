@@ -28,7 +28,7 @@ const STATIC_INFO = {
   ide: "VS Code",
   role: "Freelance Developer",
   experience: "1+ year Full Stack",
-  techStack: "React, Svelte, Next, Node, Nest",
+  techStack: "React, Svelte, Next, Express, Nest",
   databases: "PostgreSQL, Supabase",
   styling: "Tailwind CSS",
   orm: "Drizzle ORM",
@@ -378,7 +378,7 @@ function updateSvg(
   // Static personal info with padding
   if (p.website) {
     put(doc, "email_data", p.website);
-    padDots(doc, "email_data", p.website, 47);
+    padDots(doc, "email_data", p.website, 48);
   }
   if (p.os) {
     put(doc, "os_data", p.os);
@@ -410,7 +410,7 @@ function updateSvg(
   }
   if (p.techStack) {
     put(doc, "techStack_data", p.techStack);
-    padDots(doc, "techStack_data", p.techStack, 40);
+    padDots(doc, "techStack_data", p.techStack, 42);
   }
   if (p.databases) {
     put(doc, "databases_data", p.databases);
