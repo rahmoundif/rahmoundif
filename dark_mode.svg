@@ -60,7 +60,7 @@
         <tspan class="cc">• </tspan>
         <tspan class="key">Uptime</tspan>:
         <tspan class="cc" id="age_data_dots"> ................................ </tspan>
-        <tspan class="val" id="age_data">35 years, 23 days</tspan>
+        <tspan class="val" id="age_data">35 years, 24 days</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
@@ -202,7 +202,7 @@
       <tspan> | </tspan>
       <tspan class="key">PRs</tspan>:
       <tspan class="cc" id="pr_data_dots"> .............. </tspan>
-      <tspan class="val" id="pr_data">93</tspan>
+      <tspan class="val" id="pr_data">94</tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
