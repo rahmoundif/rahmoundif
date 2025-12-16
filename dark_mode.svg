@@ -98,7 +98,7 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Frameworks/Lib</tspan>:
-        <tspan class="cc" id="techStack_data_dots"> ........ </tspan>
+        <tspan class="cc" id="techStack_data_dots"> ....... </tspan>
         <tspan class="val" id="techStack_data">React, Svelte, Next, Express, Nest</tspan>
       </tspan>
 
@@ -203,20 +203,20 @@
       <tspan class="cc">• </tspan>
       <tspan class="key">Repos</tspan>:
       <tspan class="cc" id="repo_data_dots"> .... </tspan>
-      <tspan class="val" id="repo_data">31</tspan>
+      <tspan class="val" id="repo_data">32</tspan>
       <tspan> {</tspan>
       <tspan class="key">Contributed</tspan>:      <tspan class="val" id="contrib_data">5</tspan>
       <tspan>}</tspan>
       <tspan> | </tspan>
       <tspan class="key">PRs</tspan>:
       <tspan class="cc" id="pr_data_dots"> .............. </tspan>
-      <tspan class="val" id="pr_data">88</tspan>
+      <tspan class="val" id="pr_data">94</tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Commits</tspan>:
         <tspan class="cc" id="commit_data_dots"> .................... </tspan>
-        <tspan class="val" id="commit_data">509</tspan>
+        <tspan class="val" id="commit_data">532</tspan>
         <tspan> | </tspan>
         <tspan class="key">Followers</tspan>:
         <tspan class="cc" id="follower_data_dots"> ......... </tspan>
