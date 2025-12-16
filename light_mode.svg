@@ -80,7 +80,7 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">IDE</tspan>:
-        <tspan class="cc" id="ide_data_dots"> .............................. </tspan>
+        <tspan class="cc" id="ide_data_dots"> ................ </tspan>
         <tspan class="val" id="ide_data">VS Code, Visual Studio</tspan>
       </tspan>
 
@@ -98,7 +98,7 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Front-End Frameworks/Lib</tspan>:
-        <tspan class="cc" id="techStack_data_dots"> ...... </tspan>
+        <tspan class="cc" id="techStack_data_dots"> ................ </tspan>
         <tspan class="val" id="techStack_data">Expo, React, Svelte, Next</tspan>
       </tspan>
 
@@ -112,8 +112,8 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Styling</tspan>:
-        <tspan class="cc" id="styling_data_dots"> .................................... </tspan>
-        <tspan class="val" id="styling_data">Tailwind CSS</tspan>
+        <tspan class="cc" id="styling_data_dots"> ......................... </tspan>
+        <tspan class="val" id="styling_data">NativeWind/Tailwind CSS</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
@@ -126,7 +126,7 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Databases</tspan>:
-        <tspan class="cc" id="databases_data_dots"> ................... </tspan>
+        <tspan class="cc" id="databases_data_dots"> ............ </tspan>
         <tspan class="val" id="databases_data">MySQL, PostgreSQL, Supabase</tspan>
       </tspan>
 
@@ -223,7 +223,7 @@
         <tspan class="cc">• </tspan>
         <tspan class="key">Commits</tspan>:
         <tspan class="cc" id="commit_data_dots"> .................... </tspan>
-        <tspan class="val" id="commit_data">540</tspan>
+        <tspan class="val" id="commit_data">542</tspan>
         <tspan> | </tspan>
         <tspan class="key">Followers</tspan>:
         <tspan class="cc" id="follower_data_dots"> ......... </tspan>
