@@ -25,12 +25,12 @@ const STATIC_INFO = {
   linkedin: "linkedin.com/in/rahmoundif",
   malt: "malt.fr/profile/rahmoundif",
   bluesky: "@rmoond.bsky.social",
-  ide: "VS Code",
+  ide: "VS Code, Visual Studio",
   role: "Freelance Developer",
   experience: "1+ year Full Stack",
-  techStack: "React, Svelte, Next, Express, Nest",
-  databases: "PostgreSQL, Supabase",
-  styling: "Tailwind CSS",
+  techStack: "Expo, React, Svelte, Next",
+  databases: "MySQL, PostgreSQL, Supabase",
+  styling: "NativeWind/Tailwind CSS",
   orm: "Drizzle ORM",
   api: "REST, GraphQL",
   testing: "Jest, Vitest, Playwright",
@@ -398,7 +398,7 @@ function updateSvg(
   }
   if (p.ide) {
     put(doc, "ide_data", p.ide);
-    padDots(doc, "ide_data", p.ide, 37);
+    padDots(doc, "ide_data", p.ide, 38);
   }
   if (p.role) {
     put(doc, "role_data", p.role);
