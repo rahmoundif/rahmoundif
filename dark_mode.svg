@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="985" height="700" font-family="Consolas, ui-monospace, monospace" font-size="16">
+<svg xmlns="http://www.w3.org/2000/svg" width="985" height="550" font-family="Consolas, ui-monospace, monospace" font-size="16">
   <style>
     .mono { fill:#c9d1d9; }
     .key  { fill:#ffa657; }
     .val  { fill:#a5d6ff; }
     .cc   { fill:#616e7f; }
   </style>
-  <rect width="985" height="700" rx="15" fill="#161b22"/>
+  <rect width="985" height="550" rx="15" fill="#161b22"/>
   <!-- ASCII will be injected into the <pre id="ascii_payload"> element below -->
   <foreignObject x="0" y="90" width="360" height="500">
     <pre xmlns="http://www.w3.org/1999/xhtml" class="mono" id="ascii_payload" style="font-family: monospace; font-size: 7px; white-space: pre; color: #ffffff;">                  ---------------------------------------
@@ -80,7 +80,7 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">IDE</tspan>:
-        <tspan class="cc" id="ide_data_dots"> ............................................. </tspan>
+        <tspan class="cc" id="ide_data_dots"> .............................. </tspan>
         <tspan class="val" id="ide_data">VS Code, Visual Studio</tspan>
       </tspan>
 
@@ -90,23 +90,30 @@
         <tspan class="cc" id="lang1_data_dots"> .......... </tspan>
         <tspan class="val" id="lang1_data">TypeScript</tspan>, 
         <tspan class="val" id="lang2_data">JavaScript</tspan>, 
-        <tspan class="val" id="lang3_data">C#</tspan>,
-        <tspan class="val" id="lang4_data">Python</tspan>
+        <tspan class="val" id="lang4_data">Python</tspan>,
+        <tspan class="val" id="lang3_data">C#</tspan>
       </tspan>
 
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
-        <tspan class="key">Frameworks/Lib</tspan>:
-        <tspan class="cc" id="techStack_data_dots"> ....... </tspan>
-        <tspan class="val" id="techStack_data">React, Svelte, Next, Express, Nest</tspan>
+        <tspan class="key">Front-End Frameworks/Lib</tspan>:
+        <tspan class="cc" id="techStack_data_dots"> ...... </tspan>
+        <tspan class="val" id="techStack_data">Expo, React, Svelte, Next</tspan>
+      </tspan>
+
+      <tspan x="0" dy="25">
+        <tspan class="cc">• </tspan>
+        <tspan class="key">Back-End Frameworks/Lib</tspan>:
+        <tspan class="cc" id="techStack_data_dots"> ................... </tspan>
+        <tspan class="val" id="techStack_data">Express, Nest</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Styling</tspan>:
-        <tspan class="cc" id="styling_data_dots"> .................................... </tspan>
-        <tspan class="val" id="styling_data">Tailwind CSS</tspan>
+        <tspan class="cc" id="styling_data_dots"> ......................... </tspan>
+        <tspan class="val" id="styling_data">NativeWind/Tailwind CSS</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
@@ -119,7 +126,7 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Databases</tspan>:
-        <tspan class="cc" id="databases_data_dots"> .......................... </tspan>
+        <tspan class="cc" id="databases_data_dots"> ................... </tspan>
         <tspan class="val" id="databases_data">Mysql, PostgreSQL, Supabase</tspan>
       </tspan>
 
@@ -194,12 +201,12 @@
     </text> -->
 
     <!-- GitHub Stats Section -->
-    <text y="390">
+    <text y="410">
       <tspan class="h">GitHub Stats</tspan>
     </text>
-    <line x1="125" y1="385" x2="560" y2="385" stroke="#2a313b" stroke-width="1"/>
+    <line x1="125" y1="405" x2="560" y2="405" stroke="#2a313b" stroke-width="1"/>
 
-    <text x="0" y="420">
+    <text x="0" y="450">
       <tspan class="cc">• </tspan>
       <tspan class="key">Repos</tspan>:
       <tspan class="cc" id="repo_data_dots"> .... </tspan>
