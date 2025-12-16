@@ -56,12 +56,12 @@
       <tspan class="cc" id="os_data_dots"> ........................................... </tspan>
       <tspan class="val" id="os_data">Windows 11</tspan>
 
-      <tspan x="0" dy="25">
+      <!-- <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Uptime</tspan>:
         <tspan class="cc" id="age_data_dots"> ................................. </tspan>
         <tspan class="val" id="age_data">35 years, 5 days</tspan>
-      </tspan>
+      </tspan> -->
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
@@ -72,9 +72,16 @@
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
+        <tspan class="key">Experience</tspan>:
+        <tspan class="cc" id="experience_data_dots"> ........................... </tspan>
+        <tspan class="val" id="experience_data">1+ year Full Stack</tspan>
+      </tspan>
+
+      <tspan x="0" dy="25">
+        <tspan class="cc">• </tspan>
         <tspan class="key">IDE</tspan>:
         <tspan class="cc" id="ide_data_dots"> ............................................. </tspan>
-        <tspan class="val" id="ide_data">VS Code</tspan>
+        <tspan class="val" id="ide_data">VS Code, Visual Studio</tspan>
       </tspan>
 
       <tspan x="0" dy="25">
@@ -87,12 +94,6 @@
         <tspan class="val" id="lang4_data">Python</tspan>
       </tspan>
 
-      <tspan x="0" dy="25">
-        <tspan class="cc">• </tspan>
-        <tspan class="key">Experience</tspan>:
-        <tspan class="cc" id="experience_data_dots"> ........................... </tspan>
-        <tspan class="val" id="experience_data">1+ year Full Stack</tspan>
-      </tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
@@ -110,9 +111,16 @@
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
+        <tspan class="key">Environment runtime</tspan>:
+        <tspan class="cc" id="experience_data_dots"> ........................... </tspan>
+        <tspan class="val" id="experience_data">Node, Bun</tspan>
+      </tspan>
+
+      <tspan x="0" dy="25">
+        <tspan class="cc">• </tspan>
         <tspan class="key">Databases</tspan>:
         <tspan class="cc" id="databases_data_dots"> .......................... </tspan>
-        <tspan class="val" id="databases_data">PostgreSQL, Supabase</tspan>
+        <tspan class="val" id="databases_data">Mysql, PostgreSQL, Supabase</tspan>
       </tspan>
 
 
@@ -146,7 +154,7 @@
     </text>
 
     <!-- Contact Section -->
-    <text y="378">
+    <!-- <text y="378">
       <tspan class="h">Contact</tspan>
     </text>
     <line x1="80" y1="372" x2="560" y2="372" stroke="#2a313b" stroke-width="1"/>
@@ -183,15 +191,15 @@
           <tspan class="val" id="bluesky_data">@rmoond.bsky.social</tspan>
         </a>
       </tspan>
-    </text>
+    </text> -->
 
     <!-- GitHub Stats Section -->
-    <text y="519">
+    <text y="390">
       <tspan class="h">GitHub Stats</tspan>
     </text>
-    <line x1="125" y1="515" x2="560" y2="515" stroke="#2a313b" stroke-width="1"/>
+    <line x1="125" y1="385" x2="560" y2="385" stroke="#2a313b" stroke-width="1"/>
 
-    <text x="0" y="550">
+    <text x="0" y="420">
       <tspan class="cc">• </tspan>
       <tspan class="key">Repos</tspan>:
       <tspan class="cc" id="repo_data_dots"> .... </tspan>
@@ -215,12 +223,12 @@
         <tspan class="val" id="follower_data">6</tspan>
       </tspan>
 
-      <tspan x="0" dy="25">
+      <!-- <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Lines of Code</tspan>:
         <tspan class="cc" id="loc_data_dots"> .................................... </tspan>
         <tspan class="val" id="loc_data">22,475</tspan>
-      </tspan>
+      </tspan> -->
     </text>
 
   </g>

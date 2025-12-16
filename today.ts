@@ -398,7 +398,7 @@ function updateSvg(
   }
   if (p.ide) {
     put(doc, "ide_data", p.ide);
-    padDots(doc, "ide_data", p.ide, 52);
+    padDots(doc, "ide_data", p.ide, 37);
   }
   if (p.role) {
     put(doc, "role_data", p.role);
@@ -414,7 +414,7 @@ function updateSvg(
   }
   if (p.databases) {
     put(doc, "databases_data", p.databases);
-    padDots(doc, "databases_data", p.databases, 46);
+    padDots(doc, "databases_data", p.databases, 39);
   }
   if (p.styling) {
     put(doc, "styling_data", p.styling);
