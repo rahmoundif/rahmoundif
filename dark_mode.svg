@@ -80,7 +80,7 @@
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">IDE</tspan>:
-        <tspan class="cc" id="ide_data_dots"> ................ </tspan>
+        <tspan class="cc" id="ide_data_dots"> .............................. </tspan>
         <tspan class="val" id="ide_data">VS Code, Visual Studio</tspan>
       </tspan>
 
