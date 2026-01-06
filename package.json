@@ -2,17 +2,17 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "update": "node dist/today.js",
-    "build-run": "npm run build && node dist/today.js",
-    "start": "node dist/today.js"
+    "update": "bun dist/today.js",
+    "build:run": "bun run build && bun dist/today.js",
+    "start": "bun dist/today.js"
   },
   "dependencies": {
-    "@octokit/graphql": "^7.0.1",
-    "@xmldom/xmldom": "^0.8.10",
-    "xpath": "^0.0.32"
+    "@octokit/graphql": "^9.0.3",
+    "@xmldom/xmldom": "^0.8.11",
+    "xpath": "^0.0.34"
   },
   "devDependencies": {
-    "@types/node": "^24.5.2",
-    "typescript": "^5.5.0"
+    "@types/node": "^25.0.3",
+    "typescript": "^5.9.3"
   }
 }

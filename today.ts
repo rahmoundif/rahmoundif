@@ -21,7 +21,7 @@ const BIRTHDATE = (process.env.BIRTHDATE || "1990-11-16").trim();
 // Static personal information
 const STATIC_INFO = {
   website: "rahmoundif.dev",
-  os: "Windows 11",
+  os: "Fedora KDE 43 plasma , Windows 11",
   linkedin: "linkedin.com/in/rahmoundif",
   malt: "malt.fr/profile/rahmoundif",
   bluesky: "@rmoond.bsky.social",
