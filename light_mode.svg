@@ -90,8 +90,8 @@
         <tspan class="cc" id="lang1_data_dots"> .......... </tspan>
         <tspan class="val" id="lang1_data">TypeScript</tspan>, 
         <tspan class="val" id="lang2_data">JavaScript</tspan>, 
-        <tspan class="val" id="lang3_data">c#</tspan>,
-        <tspan class="val" id="lang4_data">N/A</tspan>
+        <tspan class="val" id="lang3_data">Python</tspan>,
+        <tspan class="val" id="lang4_data">C#</tspan>
       </tspan>
 
 
@@ -209,25 +209,25 @@
     <text x="0" y="450">
       <tspan class="cc">• </tspan>
       <tspan class="key">Repos</tspan>:
-      <tspan class="cc" id="repo_data_dots"> ..... </tspan>
-      <tspan class="val" id="repo_data">0</tspan>
+      <tspan class="cc" id="repo_data_dots"> .... </tspan>
+      <tspan class="val" id="repo_data">33</tspan>
       <tspan> {</tspan>
-      <tspan class="key">Contributed</tspan>:      <tspan class="val" id="contrib_data">0</tspan>
+      <tspan class="key">Contributed</tspan>:      <tspan class="val" id="contrib_data">5</tspan>
       <tspan>}</tspan>
       <tspan> | </tspan>
       <tspan class="key">PRs</tspan>:
-      <tspan class="cc" id="pr_data_dots"> ............... </tspan>
-      <tspan class="val" id="pr_data">0</tspan>
+      <tspan class="cc" id="pr_data_dots"> .............. </tspan>
+      <tspan class="val" id="pr_data">98</tspan>
 
       <tspan x="0" dy="25">
         <tspan class="cc">• </tspan>
         <tspan class="key">Commits</tspan>:
         <tspan class="cc" id="commit_data_dots"> .................... </tspan>
-        <tspan class="val" id="commit_data">493</tspan>
+        <tspan class="val" id="commit_data">555</tspan>
         <tspan> | </tspan>
         <tspan class="key">Followers</tspan>:
         <tspan class="cc" id="follower_data_dots"> ......... </tspan>
-        <tspan class="val" id="follower_data">0</tspan>
+        <tspan class="val" id="follower_data">6</tspan>
       </tspan>
 
       <!-- <tspan x="0" dy="25">
