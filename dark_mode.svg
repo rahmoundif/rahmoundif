@@ -227,7 +227,7 @@
         <tspan> | </tspan>
         <tspan class="key">Followers</tspan>:
         <tspan class="cc" id="follower_data_dots"> ......... </tspan>
-        <tspan class="val" id="follower_data">6</tspan>
+        <tspan class="val" id="follower_data">7</tspan>
       </tspan>
 
       <!-- <tspan x="0" dy="25">
