@@ -210,7 +210,7 @@
       <tspan class="cc">• </tspan>
       <tspan class="key">Repos</tspan>:
       <tspan class="cc" id="repo_data_dots"> .... </tspan>
-      <tspan class="val" id="repo_data">35</tspan>
+      <tspan class="val" id="repo_data">36</tspan>
       <tspan> {</tspan>
       <tspan class="key">Contributed</tspan>:      <tspan class="val" id="contrib_data">5</tspan>
       <tspan>}</tspan>
@@ -223,7 +223,7 @@
         <tspan class="cc">• </tspan>
         <tspan class="key">Commits</tspan>:
         <tspan class="cc" id="commit_data_dots"> .................... </tspan>
-        <tspan class="val" id="commit_data">551</tspan>
+        <tspan class="val" id="commit_data">569</tspan>
         <tspan> | </tspan>
         <tspan class="key">Followers</tspan>:
         <tspan class="cc" id="follower_data_dots"> ......... </tspan>
