@@ -212,7 +212,7 @@
       <tspan class="cc" id="repo_data_dots"> .... </tspan>
       <tspan class="val" id="repo_data">36</tspan>
       <tspan> {</tspan>
-      <tspan class="key">Contributed</tspan>:      <tspan class="val" id="contrib_data">5</tspan>
+      <tspan class="key">Contributed</tspan>:      <tspan class="val" id="contrib_data">4</tspan>
       <tspan>}</tspan>
       <tspan> | </tspan>
       <tspan class="key">PRs</tspan>:
