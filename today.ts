@@ -37,7 +37,7 @@ const STATIC_INFO = {
 };
 if (!TOKEN || !USER) {
   console.warn(
-    "WARNING: Missing ACCESS_TOKEN/GITHUB_TOKEN or USER_NAME — running in preview mode (ASCII will be injected, stats will be placeholders)."
+    "WARNING: Missing ACCESS_TOKEN/GITHUB_TOKEN or USER_NAME — running in preview mode (ASCII will be injected, stats will be placeholders).",
   );
 }
 
@@ -76,8 +76,8 @@ function padDots(doc: Document, id: string, text: string, width: number) {
       ? len === 0
         ? ""
         : len === 1
-        ? " "
-        : ". "
+          ? " "
+          : ". "
       : " " + ".".repeat(len) + " ";
   put(doc, `${id}_dots`, dots);
 }
@@ -115,7 +115,7 @@ async function getOwnerStarsRepos() {
     stars += r.edges.reduce(
       (s: number, e: { node: { stargazers: { totalCount: number } } }) =>
         s + e.node.stargazers.totalCount,
-      0
+      0,
     );
     if (!r.pageInfo.hasNextPage) break;
     cursor = r.pageInfo.endCursor;
@@ -134,7 +134,7 @@ async function getFollowers() {
   const res = await client<{ user: { followers: { totalCount: number } } }>(
     `
     query($login:String!){ user(login:$login){ followers{ totalCount } } }`,
-    { login: USER }
+    { login: USER },
   );
   return res.user.followers.totalCount;
 }
@@ -143,7 +143,7 @@ async function getPullRequests() {
   const res = await client<{ user: { pullRequests: { totalCount: number } } }>(
     `
     query($login:String!){ user(login:$login){ pullRequests(first:1){ totalCount } } }`,
-    { login: USER }
+    { login: USER },
   );
   return res.user.pullRequests.totalCount;
 }
@@ -195,7 +195,6 @@ async function getTopLanguages() {
 
   const query = `query($login:String!,$cursor:String){ user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER], privacy:PUBLIC){ pageInfo{endCursor hasNextPage} edges{ node{ languages(first:10){ edges{ node{name} size } } } } } } }`;
 
-
   type TopLangsResp = {
     user: {
       repositories: {
@@ -244,7 +243,7 @@ async function getTopLanguages() {
     "Batchfile",
   ]);
   const allLanguages = Array.from(languageMap.entries()).sort(
-    ([, a], [, b]) => b - a
+    ([, a], [, b]) => b - a,
   );
   const sortedLanguages = allLanguages
     .filter(([name]) => !excludedLanguages.has(name))
@@ -282,7 +281,7 @@ function updateSvg(
     orm?: string;
     api?: string;
     testing?: string;
-  }
+  },
 ) {
   const xml = readFileSync(path, "utf8");
   const doc = new DOMParser().parseFromString(xml, "text/xml");
@@ -318,7 +317,7 @@ function updateSvg(
     // Compute a font-size that fits within targetPx, but clamp to reasonable bounds.
     const approxCharWidthAt16 = 9; // px per char at font-size 16
     const rawFontSize = Math.floor(
-      (targetPx / Math.max(1, maxChars)) * (16 / approxCharWidthAt16)
+      (targetPx / Math.max(1, maxChars)) * (16 / approxCharWidthAt16),
     );
     const fontSize = Math.max(6, Math.min(20, rawFontSize || 8));
 
@@ -333,7 +332,7 @@ function updateSvg(
       const colorStyle = isDark ? "color: #ffffff;" : "";
       (asciiNode as any).setAttribute(
         "style",
-        `font-family: monospace; font-size: ${fontSize}px; white-space: pre; ${colorStyle}`
+        `font-family: monospace; font-size: ${fontSize}px; white-space: pre; ${colorStyle}`,
       );
     }
 
@@ -476,7 +475,10 @@ function updateSvg(
       topLangsRes,
     ] = settled.map((r, i) => {
       if (r.status === "rejected") {
-        console.warn(`Warning: API call #${i} failed:`, r.reason?.message ?? r.reason);
+        console.warn(
+          `Warning: API call #${i} failed:`,
+          r.reason?.message ?? r.reason,
+        );
         return undefined;
       }
       return r.value;
