@@ -89,7 +89,7 @@ async function getOwnerStarsRepos() {
     first = true;
 
   const query = `query($login:String!,$cursor:String){
-      user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER]){
+      user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER], privacy:PUBLIC){
         totalCount pageInfo{endCursor hasNextPage} edges{ node{ stargazers{ totalCount } } } } } }`;
 
   type RepositoriesResponse = {
@@ -161,7 +161,7 @@ async function getLocEstimate() {
   // Sum language size across owned repositories (first 100 per page). This is an estimate.
   let cursor: string | null = null;
   let totalBytes = 0;
-  const query = `query($login:String!,$cursor:String){ user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER]){ pageInfo{endCursor hasNextPage} edges{ node{ languages(first:100){ edges{ size } } } } } } }`;
+  const query = `query($login:String!,$cursor:String){ user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER], privacy:PUBLIC){ pageInfo{endCursor hasNextPage} edges{ node{ languages(first:100){ edges{ size } } } } } } }`;
 
   type RepoLangsResp = {
     user: {
@@ -193,7 +193,8 @@ async function getTopLanguages() {
   let cursor: string | null = null;
   const languageMap = new Map<string, number>();
 
-  const query = `query($login:String!,$cursor:String){ user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER]){ pageInfo{endCursor hasNextPage} edges{ node{ languages(first:10){ edges{ node{name} size } } } } } } }`;
+  const query = `query($login:String!,$cursor:String){ user(login:$login){ repositories(first:100, after:$cursor, ownerAffiliations:[OWNER], privacy:PUBLIC){ pageInfo{endCursor hasNextPage} edges{ node{ languages(first:10){ edges{ node{name} size } } } } } } }`;
+
 
   type TopLangsResp = {
     user: {
@@ -456,15 +457,7 @@ function updateSvg(
   let locBytes: number | undefined = undefined;
   let topLanguages: string[] = [];
   if (TOKEN && USER) {
-    const [
-      ownerRes,
-      contributedRes,
-      followersRes,
-      pullRequestsRes,
-      commitsRes,
-      locRes,
-      topLangsRes,
-    ] = await Promise.all([
+    const settled = await Promise.allSettled([
       getOwnerStarsRepos(),
       getContributedRepos(),
       getFollowers(),
@@ -473,14 +466,31 @@ function updateSvg(
       getLocEstimate(),
       getTopLanguages(),
     ]);
-    ({ total } = ownerRes as any);
-    contributed = contributedRes as any;
-    followers = followersRes as any;
-    pullRequests = pullRequestsRes as number;
-    commits = commitsRes as number;
-    locLines = (locRes as any).lines as number;
-    locBytes = (locRes as any).bytes as number;
-    topLanguages = topLangsRes as string[];
+    const [
+      ownerRes,
+      contributedRes,
+      followersRes,
+      pullRequestsRes,
+      commitsRes,
+      locRes,
+      topLangsRes,
+    ] = settled.map((r, i) => {
+      if (r.status === "rejected") {
+        console.warn(`Warning: API call #${i} failed:`, r.reason?.message ?? r.reason);
+        return undefined;
+      }
+      return r.value;
+    });
+    if (ownerRes) ({ total } = ownerRes as any);
+    if (contributedRes != null) contributed = contributedRes as any;
+    if (followersRes != null) followers = followersRes as any;
+    if (pullRequestsRes != null) pullRequests = pullRequestsRes as number;
+    if (commitsRes != null) commits = commitsRes as number;
+    if (locRes != null) {
+      locLines = (locRes as any).lines as number;
+      locBytes = (locRes as any).bytes as number;
+    }
+    if (topLangsRes != null) topLanguages = topLangsRes as string[];
     console.log("fetched stats:", {
       user: USER,
       repos: total,
